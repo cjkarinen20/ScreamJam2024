@@ -261,12 +261,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: zoomKey
+      value: 324
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
       propertyPath: sprintbobSpeed
       value: 0.045
       objectReference: {fileID: 0}
+    - target: {fileID: 4233936645576729318, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: m_text
+      value: Quit to Desktop
+      objectReference: {fileID: 0}
     - target: {fileID: 4241479673706796869, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4435878914618852681, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
       propertyPath: m_fontColor.b
