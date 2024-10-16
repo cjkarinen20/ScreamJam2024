@@ -212,7 +212,8 @@ public class NewFPSController : MonoBehaviour
     }
     private void HandleMovementInput()
     {
-        currentInput = new Vector2((isSprinting ? sprintSpeed : walkSpeed) * Input.GetAxis("Vertical"), (isSprinting ? sprintSpeed : walkSpeed) * Input.GetAxis("Horizontal"));
+        Vector2 desiredInput = new Vector2((isSprinting ? sprintSpeed : walkSpeed) * Input.GetAxis("Vertical"), (isSprinting ? sprintSpeed : walkSpeed) * Input.GetAxis("Horizontal"));
+        currentInput = Vector2.Lerp(currentInput, desiredInput, Time.deltaTime * desiredInput.magnitude > 0 ? 3 : 8);
 
         float moveDirectionY = moveDirection.y;
         moveDirection = (transform.TransformDirection(Vector3.forward) * currentInput.x) + (transform.TransformDirection(Vector3.right) * currentInput.y);
