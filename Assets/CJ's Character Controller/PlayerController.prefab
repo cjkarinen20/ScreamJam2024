@@ -312,7 +312,7 @@ MonoBehaviour:
   sprintKey: 304
   jumptKey: 32
   crouchKey: 306
-  zoomKey: 325
+  zoomKey: 324
   interactKey: 101
   walkSpeed: 2.5
   sprintSpeed: 7.5
@@ -654,7 +654,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1080, y: 720}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1058,7 +1058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5355373267021663410, guid: bdaed61e785748e408f4837b27823150, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5736911586210268409, guid: bdaed61e785748e408f4837b27823150, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1151,6 +1151,18 @@ PrefabInstance:
     - target: {fileID: 86985196922919218, guid: e995beca875a9924497307746bae24e1, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 305155963908452219, guid: e995beca875a9924497307746bae24e1, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 305155963908452219, guid: e995beca875a9924497307746bae24e1, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 305155963908452219, guid: e995beca875a9924497307746bae24e1, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 736949666189063458, guid: e995beca875a9924497307746bae24e1, type: 3}
       propertyPath: m_fontAsset
