@@ -105,6 +105,10 @@ public class NewFPSController : MonoBehaviour
     [SerializeField] private float crouchStepMultiplier = 1.5f;
     [SerializeField] private float sprintStepMultiplier = 0.3f;
     [SerializeField] private AudioSource footstepAudioSource = default;
+    [SerializeField] private AudioClip[] stoneSounds = default;
+    [SerializeField] private AudioClip[] stoneRunSounds = default;
+    [SerializeField] private AudioClip[] woodSounds = default;
+    [SerializeField] private AudioClip[] woodRunSounds = default;
     [SerializeField] private AudioClip[] grassSounds = default;
     [SerializeField] private AudioClip[] grassRunSounds = default;
     [SerializeField] private AudioClip[] dirtSounds = default;
@@ -344,6 +348,22 @@ public class NewFPSController : MonoBehaviour
                 {
                     switch (hit.collider.tag)
                     {
+                        case "Wood":
+                            if (isSprinting)
+                                footstepAudioSource.PlayOneShot(woodRunSounds[UnityEngine.Random.Range(0, woodRunSounds.Length - 1)]);
+                            else
+                            {
+                                footstepAudioSource.PlayOneShot(woodSounds[UnityEngine.Random.Range(0, woodSounds.Length - 1)]);
+                            }
+                            break;
+                        case "Stone":
+                            if (isSprinting)
+                                footstepAudioSource.PlayOneShot(stoneRunSounds[UnityEngine.Random.Range(0, stoneRunSounds.Length - 1)]);
+                            else
+                            {
+                                footstepAudioSource.PlayOneShot(stoneSounds[UnityEngine.Random.Range(0, stoneSounds.Length - 1)]);
+                            }
+                            break;
                         case "Grass":
                             if (isSprinting)
                                 footstepAudioSource.PlayOneShot(grassRunSounds[UnityEngine.Random.Range(0, grassRunSounds.Length - 1)]);
