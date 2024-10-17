@@ -29,10 +29,6 @@ public class flashlight : MonoBehaviour
     public static Action<float> OnBatteryChange;
 
 
-
-
-
-
     void Start()
     {
         currentBatteryLevel = maxBattery;
@@ -48,7 +44,7 @@ public class flashlight : MonoBehaviour
        HandleFlashlight();
        HandleBattery();
 
-       Debug.Log("Battery: " + currentBatteryLevel);
+       //Debug.Log("Battery: " + currentBatteryLevel);
     }
     private void HandleBattery()
     {

@@ -37,7 +37,8 @@ public class NewFPSController : MonoBehaviour
     [SerializeField] public float walkSpeed = 4.5f;
     [SerializeField] private float sprintSpeed = 6.2f;
     [SerializeField] private float crouchSpeed = 1.5f;
-    [SerializeField] private float slopeSpeed = 8f; 
+    [SerializeField] private float slopeSpeed = 8f;
+    [SerializeField] private float rotSpeed = 50f;
 
 
     [Header("Look Parameters")]
@@ -98,6 +99,10 @@ public class NewFPSController : MonoBehaviour
     [SerializeField] private float zoomFOV = 40f;
     private float defaultFOV;
     private Coroutine zoomRoutine;
+
+    [Header("Recoil")]
+    private Vector3 targetRecoil = Vector3.zero;
+    private Vector3 currentRecoil = Vector3.zero;
 
     [Header("Footstep Parameters")]
     [SerializeField] private float baseStepSpeed = 0.7f;
@@ -210,8 +215,8 @@ public class NewFPSController : MonoBehaviour
 
             DamageOverlay();
 
-            Debug.Log("Health: " + currentHealth);
-            Debug.Log("Stamina: " + currentStamina);
+            //Debug.Log("Health: " + currentHealth);
+            //Debug.Log("Stamina: " + currentStamina);
 
             ApplyFinalMovement();
         }
@@ -233,7 +238,8 @@ public class NewFPSController : MonoBehaviour
     {
         rotationX -= Input.GetAxis("Mouse Y") * lookSpeedY;
         rotationX = Mathf.Clamp(rotationX, -upperLookLimit, lowerLookLimit);
-        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0); //Apply recoil to mouse look
+
         transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeedX, 0);
     }
     private void HandleJump()
@@ -248,6 +254,21 @@ public class NewFPSController : MonoBehaviour
                 StartCoroutine(CrouchStand());
             }
         }
+    }
+    public void ResetAimRecoil(GunData gunData)
+    {
+        currentRecoil = Vector3.MoveTowards(currentRecoil, Vector3.zero, Time.deltaTime * gunData.a_resetRecoilSpeed);
+        targetRecoil = Vector3.MoveTowards(targetRecoil, Vector3.zero, Time.deltaTime * gunData.a_resetRecoilSpeed);
+
+    }
+    public void HandleAimRecoil(GunData gunData)
+    {
+        float recoilX = UnityEngine.Random.Range(-gunData.a_maxRecoil.x, gunData.a_maxRecoil.x) * gunData.a_recoilAmount;
+        float recoilY = UnityEngine.Random.Range(-gunData.a_maxRecoil.y, gunData.a_maxRecoil.y) * gunData.a_recoilAmount;
+
+        targetRecoil += new Vector3(recoilX, recoilY, 0);
+
+        currentRecoil = Vector3.MoveTowards(currentRecoil, targetRecoil, Time.deltaTime * gunData.a_recoilSpeed);
     }
     private void HandleHeadBob()
     {
