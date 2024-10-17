@@ -149,8 +149,6 @@ public class NewFPSController : MonoBehaviour
     [SerializeField] private Vector3 interactionRayPoint = default;
     [SerializeField] private float interactionDistance = default;
     [SerializeField] private LayerMask interactionLayer = default;
-    private Interactable currentInteractable;
-    private Breakable currentBreakable;
 
     private Camera playerCamera;
     private CharacterController characterController;
@@ -206,7 +204,6 @@ public class NewFPSController : MonoBehaviour
             if (interactionEnabled)
             {
                 HandleInteractionCheck();
-                HandleInteractionInput();
             }
             if (staminaEnabled)
                 HandleStamina();
@@ -447,43 +444,23 @@ public class NewFPSController : MonoBehaviour
     }
     private void HandleInteractionCheck()
     {
-        if (Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance))
-        {
-            if (hit.collider.gameObject.layer == 8 && (currentInteractable == null || hit.collider.gameObject.GetInstanceID() != currentInteractable.GetInstanceID()))
+        if(Input.GetKeyDown(interactKey)){
+            if (Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance))
             {
-                hit.collider.TryGetComponent(out currentInteractable);
-
-                if (currentInteractable)
-                    currentInteractable.OnFocus();
-            }
-            if (hit.collider.gameObject.GetComponent("Breakable") != null && currentBreakable == null)
-            {
-                hit.collider.TryGetComponent(out currentBreakable);
-
-                if (currentBreakable != null)
-                    currentBreakable.OnFocus();
-            }
-        }
-        else if (currentInteractable)
-        {
-            currentInteractable.OnLoseFocus();
-            currentInteractable = null;
-        }
-    }
-    private void HandleInteractionInput()
-    {
-        if (Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance, interactionLayer))
-        {
-            if (Input.GetKeyDown(interactKey) && currentInteractable != null)
-            {
-                currentInteractable.OnInteract();
-            }
-            else if (Input.GetKeyDown(interactKey) && currentBreakable != null)
-            {
-                currentBreakable.OnInteract();
+                if(hit.collider.TryGetComponent(out Interactable interactable)){
+                    if(interactable != null){
+                        interactable.OnInteract();
+                    }
+                }
+                if(hit.collider.TryGetComponent(out iBreakable breakable)){
+                    if(breakable != null){
+                        breakable.OnInteract();
+                    }
+                }
             }
         }
     }
+
     private IEnumerator CrouchStand()
     {
         if (isCrouching && Physics.Raycast(playerCamera.transform.position, Vector3.up, 1f))

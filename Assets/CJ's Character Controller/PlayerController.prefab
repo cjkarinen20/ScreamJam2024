@@ -355,6 +355,10 @@ MonoBehaviour:
   crouchStepMultiplier: 1.5
   sprintStepMultiplier: 0.2
   footstepAudioSource: {fileID: 8730047064632057321}
+  stoneSounds: []
+  stoneRunSounds: []
+  woodSounds: []
+  woodRunSounds: []
   grassSounds:
   - {fileID: 8300000, guid: cf0f3950f5c009246b186e56aec14040, type: 3}
   - {fileID: 8300000, guid: 159850501b6ce4b4ca59deb7e44d9351, type: 3}
@@ -701,7 +705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6415094, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

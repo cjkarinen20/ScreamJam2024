@@ -11,13 +11,7 @@ public interface iBreakable
         Boltcutters,
         Key
     }
-    public enum BreakableType
-    {
-        Boards,
-        LadderPoint,
-        Chain,
-        Lock
-    }
+
     public void OnInteract();
     public void Break();
     public void OnFocus();

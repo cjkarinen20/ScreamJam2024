@@ -1,42 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+using System;
 using UnityEngine;
+using UnityEngine.Events;
 using static iBreakable;
 
 public class Breakable : MonoBehaviour, iBreakable
 {
     [Header("Breakable Parameters")]
-    [SerializeField] public BreakableType breakableType;
-    [SerializeField] public GameObject breakable;
+    [SerializeField] private RequiredTool requiredTool;
 
-    private RequiredTool requiredTool;
+    [SerializeField] private UnityEvent onBreak;
 
-    public void Start()
-    {
-        switch(breakableType)
-        {
-            case BreakableType.Boards:
-                requiredTool = RequiredTool.Crowbar;
-                break;
-            case BreakableType.LadderPoint:
-                requiredTool = RequiredTool.Ladder;
-                break;
-            case BreakableType.Chain:
-                requiredTool = RequiredTool.Boltcutters;
-                break;
-            case BreakableType.Lock:
-                requiredTool = RequiredTool.Key;
-                break;
-            default:
-                break;
+    private void Awake() {
+        if(TryGetComponent<Rigidbody>(out Rigidbody rb)){// ! Use this to sleep rigidbodies and wake them up with the OnBreak
+            rb.Sleep();
         }
-
-
     }
+
     public void Break()
     {
-        breakable.gameObject.SetActive(false);
+        onBreak?.Invoke();
     }
 
     public void OnFocus()
