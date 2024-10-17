@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class NewFPSController : MonoBehaviour
 {
@@ -142,6 +143,7 @@ public class NewFPSController : MonoBehaviour
     [SerializeField] private float interactionDistance = default;
     [SerializeField] private LayerMask interactionLayer = default;
     private Interactable currentInteractable;
+    private Breakable currentBreakable;
 
     private Camera playerCamera;
     private CharacterController characterController;
@@ -423,6 +425,13 @@ public class NewFPSController : MonoBehaviour
                 if (currentInteractable)
                     currentInteractable.OnFocus();
             }
+            if (hit.collider.gameObject.GetComponent("Breakable") != null && currentBreakable == null)
+            {
+                hit.collider.TryGetComponent(out currentBreakable);
+
+                if (currentBreakable != null)
+                    currentBreakable.OnFocus();
+            }
         }
         else if (currentInteractable)
         {
@@ -432,11 +441,17 @@ public class NewFPSController : MonoBehaviour
     }
     private void HandleInteractionInput()
     {
-        if (Input.GetKeyDown(interactKey) && currentInteractable != null && Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance, interactionLayer))
+        if (Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance, interactionLayer))
         {
-            currentInteractable.OnInteract();
+            if (Input.GetKeyDown(interactKey) && currentInteractable != null)
+            {
+                currentInteractable.OnInteract();
+            }
+            else if (Input.GetKeyDown(interactKey) && currentBreakable != null)
+            {
+                currentBreakable.OnInteract();
+            }
         }
-
     }
     private IEnumerator CrouchStand()
     {
