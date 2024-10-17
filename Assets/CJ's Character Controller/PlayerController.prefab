@@ -317,7 +317,7 @@ MonoBehaviour:
   acceleraction: 14
   walkSpeed: 3.5
   sprintSpeed: 6.5
-  crouchSpeed: 0.1
+  crouchSpeed: 1.5
   slopeSpeed: 8
   lookSpeedX: 2
   lookSpeedY: 2
@@ -339,7 +339,7 @@ MonoBehaviour:
   gravity: 30
   crouchHeight: 0.5
   standingHeight: 1.7
-  timeToCrouch: 0.25
+  timeToCrouch: 0.18
   crouchingCenter: {x: 0, y: 0.5, z: 0}
   standingCenter: {x: 0, y: 0, z: 0}
   walkbobSpeed: 0.055
@@ -352,7 +352,7 @@ MonoBehaviour:
   zoomFOV: 45
   baseStepSpeed: 0.7
   sprintStepSpeed: 0.3
-  crouchStepMultiplier: 1.5
+  crouchStepMultiplier: 0.7
   sprintStepMultiplier: 0.2
   footstepAudioSource: {fileID: 8730047064632057321}
   stoneSounds: []
@@ -782,6 +782,10 @@ PrefabInstance:
       propertyPath: followTarget
       value: 
       objectReference: {fileID: 341713054131717531}
+    - target: {fileID: 3233181597555319195, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
+      propertyPath: batteryLifeEnabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3233181597555319195, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
       propertyPath: batteryUseMultiplier
       value: 3

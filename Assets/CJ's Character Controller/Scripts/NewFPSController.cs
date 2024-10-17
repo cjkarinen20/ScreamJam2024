@@ -11,9 +11,8 @@ public class NewFPSController : MonoBehaviour
 {
     public bool canMove = true;
     private bool isSprinting => sprintEnabled && Input.GetKey(sprintKey) && Input.GetKey(KeyCode.W) && !isCrouching;
-    private bool shouldJump => Input.GetKeyDown(jumptKey) && characterController.isGrounded;
-    private bool shouldCrouch => Input.GetKeyDown(crouchKey) || Input.GetKeyUp(crouchKey) && !ongoingCrouchAnimation && characterController.isGrounded;
-
+    private bool shouldJump => Input.GetKeyDown(jumptKey) && characterController.isGrounded && !isCrouching;
+    private bool isHoldingCrouch => Input.GetKey(crouchKey);
     [Header("Functional Options")]
     [SerializeField] public bool mouseLookEnabled = true;
     [SerializeField] private bool sprintEnabled = true;
@@ -189,12 +188,13 @@ public class NewFPSController : MonoBehaviour
         {
             HandleMovementInput();
             
+            if(crouchEnabled){
+                HandleCrouch();
+            }
             if(mouseLookEnabled)
                 HandleMouseLook();
             if (jumpEnabled)
                 HandleJump();
-            if (crouchEnabled)
-                HandleCrouch();
             if (headBobEnabled)
                 HandleHeadBob();
             if (zoomEnabled)
@@ -219,7 +219,7 @@ public class NewFPSController : MonoBehaviour
     private void HandleMovementInput()
     {
         if(characterController.isGrounded){
-            currentSpeed = Mathf.Lerp(currentSpeed, isSprinting ? sprintSpeed : walkSpeed, Time.deltaTime * acceleraction); 
+            currentSpeed = Mathf.Lerp(currentSpeed, isCrouching? crouchSpeed : isSprinting ? sprintSpeed : walkSpeed, Time.deltaTime * acceleraction); 
         }
 
         Vector2 desiredInput = new Vector2(currentSpeed * Input.GetAxis("Vertical"), currentSpeed * Input.GetAxis("Horizontal"));
@@ -243,8 +243,11 @@ public class NewFPSController : MonoBehaviour
     }
     private void HandleCrouch()
     {
-        if (shouldCrouch)
-            StartCoroutine(CrouchStand());
+        if (characterController.isGrounded && !ongoingCrouchAnimation){
+            if(!isCrouching && isHoldingCrouch || isCrouching && !isHoldingCrouch){
+                StartCoroutine(CrouchStand());
+            }
+        }
     }
     private void HandleHeadBob()
     {
@@ -254,7 +257,7 @@ public class NewFPSController : MonoBehaviour
         {
             currentBobSpeed = Mathf.Lerp(currentBobSpeed, isCrouching ? crouchbobSpeed : isSprinting ? sprintbobSpeed : walkbobSpeed, Time.deltaTime * 15.5f);
     
-            Timer += currentBobSpeed;
+            Timer += Time.deltaTime + (currentBobSpeed / 2);
             playerCamera.transform.localPosition = new Vector3(
                 playerCamera.transform.localPosition.x,
                 defaultYPos + Mathf.Sin(Timer) * (isCrouching ? crouchbobAmount : isSprinting ? sprintbobAmount : walkbobAmount),
@@ -460,12 +463,10 @@ public class NewFPSController : MonoBehaviour
             }
         }
     }
-
     private IEnumerator CrouchStand()
     {
-        if (isCrouching && Physics.Raycast(playerCamera.transform.position, Vector3.up, 1f))
+        if (isCrouching && Physics.SphereCast(playerCamera.transform.position, characterController.radius + .15f, Vector3.up, out RaycastHit hit, 1f))
             yield break;
-            
 
         ongoingCrouchAnimation = true;
 
@@ -487,6 +488,8 @@ public class NewFPSController : MonoBehaviour
 
         characterController.height = targetHeight;
         characterController.center = targetCenter;
+
+        yield return new WaitForSeconds(.1f);// ? Wait an additional delay to prevent some clipping bugs
 
         ongoingCrouchAnimation = false;
     }
