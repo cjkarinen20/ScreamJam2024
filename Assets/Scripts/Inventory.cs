@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField] private GameObject[] guns;
+
+    private void Awake() {
+        for(int i = 0; i < guns.Length; i++) {
+            SetGunState(i, false);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Update() {
+        if(Input.GetKeyDown("1")){
+            SetGunState(0, true);
+            SetGunState(1, false);
+        }
+        if(Input.GetKeyDown("2")){
+            SetGunState(0, false);
+            SetGunState(1, true);
+        }
+    }
+
+    private void SetGunState (int index, bool state) {
+        guns[index].SetActive(state);
     }
 }

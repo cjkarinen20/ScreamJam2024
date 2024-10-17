@@ -12,19 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2917074a8f05518469fa966f1fc66565, type: 3}
   m_Name: Glock
   m_EditorClassIdentifier: 
-  gunName: Glock
   targetLayerMask:
     serializedVersion: 2
     m_Bits: 17
   shootingRange: 100
-  fireRate: 4
-  magazineSize: 17
+  fireRate: 8
+  magazineSize: 15
   reloadTime: 2
-  a_recoilAmount: 1
-  a_maxRecoil: {x: 1, y: 2}
-  a_recoilSpeed: 30
-  a_resetRecoilSpeed: 4
-  d_recoilAmount: 0.1
-  d_maxRecoil: {x: 1, y: 2}
-  d_recoilSpeed: 10
-  d_resetRecoilSpeed: 1
+  recoilAmount: 4

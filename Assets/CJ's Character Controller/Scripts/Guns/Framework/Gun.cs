@@ -2,18 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Gun : MonoBehaviour
+public class Gun : MonoBehaviour
 {
     public GunData gunData;
-    public NewFPSController playerController;
-    public Transform cameraTransform;
-    public Camera playerCam;
+    private NewFPSController playerController;
+    private Transform cameraTransform;
 
     private float currentAmmo = 0f;
     private float nextTimeToFire = 0f;
-
-    private Vector3 d_targetRecoil = Vector3.zero;
-    [HideInInspector] public Vector3 d_currentRecoil = Vector3.zero;
 
     private bool isReloading = false;
 
@@ -22,13 +18,26 @@ public abstract class Gun : MonoBehaviour
         currentAmmo = gunData.magazineSize;
 
         playerController = transform.root.GetComponent<NewFPSController>();
-        cameraTransform = playerCam.transform;
+        cameraTransform = playerController.playerCamera.transform;
+    }
+
+    private void OnDisable() {
+        StopAllCoroutines();
+        CancelInvoke();
+        isReloading = false;
     }
 
     public virtual void Update()
     {
-        playerController.ResetAimRecoil(gunData);
-        ResetDirectionalRecoil();
+        if (Input.GetButtonDown("Fire1"))
+        {
+            TryShoot();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            TryReload();
+        }
     }
 
     public void TryReload()
@@ -42,25 +51,23 @@ public abstract class Gun : MonoBehaviour
     {
         isReloading = true;
 
-        Debug.Log(gunData.gunName + "is reloading....");
+        Debug.Log(gunData.name + ": is reloading....");
 
         yield return new WaitForSeconds(gunData.reloadTime);
 
         currentAmmo = gunData.magazineSize;
         isReloading = false;
 
-        Debug.Log(gunData.gunName + "is reloaded");
+        Debug.Log(gunData.name + ": is reloaded");
     }
     public void TryShoot()
     {
-        if (isReloading)
-        {
-            Debug.Log(gunData.gunName + "is reloading...");
+        if (isReloading){
+            Debug.Log(gunData.name + ": is reloading...");
             return;
         }
-        if (currentAmmo <= 0f)
-        {
-            Debug.Log(gunData.gunName + "no ammo left, please reload");
+        if (currentAmmo <= 0f){
+            Debug.Log(gunData.name + ": no ammo left, please reload");
             return;
         }
 
@@ -73,29 +80,18 @@ public abstract class Gun : MonoBehaviour
     private void HandleShoot()
     {
         currentAmmo--;
-        Debug.Log(gunData.gunName + "Shot, Ammo Left:" + currentAmmo);
+        Debug.Log(gunData.name + ": Shot, Ammo Left:" + currentAmmo);
         Shoot();
-
-        playerController.HandleAimRecoil(gunData);
-        HandleDirectionalRecoil();
     }
 
-    public abstract void Shoot();
+    public virtual void Shoot(){
+        playerController.AddRecoil(gunData);
 
-    public void ResetDirectionalRecoil()
-    {
-        d_currentRecoil = Vector3.MoveTowards(d_currentRecoil, Vector3.zero, Time.deltaTime * gunData.a_resetRecoilSpeed);
-        d_targetRecoil = Vector3.MoveTowards(d_targetRecoil, Vector3.zero, Time.deltaTime * gunData.a_resetRecoilSpeed);
+        RaycastHit hit;
 
+        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, gunData.shootingRange, gunData.targetLayerMask))
+        {
+            Debug.Log(gunData.name + ": hit " + hit.collider.name);
+        }
     }
-    public void HandleDirectionalRecoil()
-    {
-        float recoilX = UnityEngine.Random.Range(-gunData.a_maxRecoil.x, gunData.a_maxRecoil.x) * gunData.a_recoilAmount;
-        float recoilY = UnityEngine.Random.Range(-gunData.a_maxRecoil.y, gunData.a_maxRecoil.y) * gunData.a_recoilAmount;
-
-        d_targetRecoil += new Vector3(recoilX, recoilY, 0);
-
-        d_currentRecoil = d_targetRecoil;
-    }
-
 }
