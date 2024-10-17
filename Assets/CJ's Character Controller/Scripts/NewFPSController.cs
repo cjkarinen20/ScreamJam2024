@@ -34,6 +34,7 @@ public class NewFPSController : MonoBehaviour
     [SerializeField] private KeyCode interactKey = KeyCode.Mouse0;
 
     [Header("Movement Parameters")]
+    [SerializeField] private float acceleraction = 9;
     [SerializeField] public float walkSpeed = 4.5f;
     [SerializeField] private float sprintSpeed = 6.2f;
     [SerializeField] private float crouchSpeed = 1.5f;
@@ -105,6 +106,10 @@ public class NewFPSController : MonoBehaviour
     [SerializeField] private float crouchStepMultiplier = 1.5f;
     [SerializeField] private float sprintStepMultiplier = 0.3f;
     [SerializeField] private AudioSource footstepAudioSource = default;
+    [SerializeField] private AudioClip[] stoneSounds = default;
+    [SerializeField] private AudioClip[] stoneRunSounds = default;
+    [SerializeField] private AudioClip[] woodSounds = default;
+    [SerializeField] private AudioClip[] woodRunSounds = default;
     [SerializeField] private AudioClip[] grassSounds = default;
     [SerializeField] private AudioClip[] grassRunSounds = default;
     [SerializeField] private AudioClip[] dirtSounds = default;
@@ -118,6 +123,8 @@ public class NewFPSController : MonoBehaviour
 
     private float footstepTimer = 0;
     private float GetCurrentOffset => isCrouching ? baseStepSpeed * crouchStepMultiplier : isSprinting ? baseStepSpeed = sprintStepMultiplier : baseStepSpeed;
+
+    private float currentSpeed = 0, currentBobSpeed = 0;
 
 
     // SLIDING PARAMETERS
@@ -214,7 +221,11 @@ public class NewFPSController : MonoBehaviour
     }
     private void HandleMovementInput()
     {
-        Vector2 desiredInput = new Vector2((isSprinting ? sprintSpeed : walkSpeed) * Input.GetAxis("Vertical"), (isSprinting ? sprintSpeed : walkSpeed) * Input.GetAxis("Horizontal"));
+        if(characterController.isGrounded){
+            currentSpeed = Mathf.Lerp(currentSpeed, isSprinting ? sprintSpeed : walkSpeed, Time.deltaTime * acceleraction); 
+        }
+
+        Vector2 desiredInput = new Vector2(currentSpeed * Input.GetAxis("Vertical"), currentSpeed * Input.GetAxis("Horizontal"));
         currentInput = Vector2.Lerp(currentInput, desiredInput, Time.deltaTime * desiredInput.magnitude > 0 ? 3 : 8);
 
         float moveDirectionY = moveDirection.y;
@@ -244,7 +255,9 @@ public class NewFPSController : MonoBehaviour
 
         if (Mathf.Abs(moveDirection.x) > 0.1f || Mathf.Abs(moveDirection.z) > 0.1f)
         {
-            Timer += Time.deltaTime + (isCrouching ? crouchbobSpeed : isSprinting ? sprintbobSpeed : walkbobSpeed);
+            currentBobSpeed = Mathf.Lerp(currentBobSpeed, isCrouching ? crouchbobSpeed : isSprinting ? sprintbobSpeed : walkbobSpeed, Time.deltaTime * 15.5f);
+    
+            Timer += currentBobSpeed;
             playerCamera.transform.localPosition = new Vector3(
                 playerCamera.transform.localPosition.x,
                 defaultYPos + Mathf.Sin(Timer) * (isCrouching ? crouchbobAmount : isSprinting ? sprintbobAmount : walkbobAmount),
@@ -254,6 +267,8 @@ public class NewFPSController : MonoBehaviour
                 playerCamera.transform.localPosition.x,
                 defaultYPos + Mathf.Sin(Timer) * (isCrouching ? crouchbobAmount : isSprinting ? sprintbobAmount : walkbobAmount),
                 playerCamera.transform.localPosition.z);
+        }else if(Mathf.Abs(moveDirection.x) < 0.1f && Mathf.Abs(moveDirection.z) < 0.1f){
+            Timer = 0;
         }
 
     }
@@ -335,6 +350,22 @@ public class NewFPSController : MonoBehaviour
                 {
                     switch (hit.collider.tag)
                     {
+                        case "Wood":
+                            if (isSprinting)
+                                footstepAudioSource.PlayOneShot(woodRunSounds[UnityEngine.Random.Range(0, woodRunSounds.Length - 1)]);
+                            else
+                            {
+                                footstepAudioSource.PlayOneShot(woodSounds[UnityEngine.Random.Range(0, woodSounds.Length - 1)]);
+                            }
+                            break;
+                        case "Stone":
+                            if (isSprinting)
+                                footstepAudioSource.PlayOneShot(stoneRunSounds[UnityEngine.Random.Range(0, stoneRunSounds.Length - 1)]);
+                            else
+                            {
+                                footstepAudioSource.PlayOneShot(stoneSounds[UnityEngine.Random.Range(0, stoneSounds.Length - 1)]);
+                            }
+                            break;
                         case "Grass":
                             if (isSprinting)
                                 footstepAudioSource.PlayOneShot(grassRunSounds[UnityEngine.Random.Range(0, grassRunSounds.Length - 1)]);
