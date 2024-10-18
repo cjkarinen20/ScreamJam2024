@@ -12,15 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2917074a8f05518469fa966f1fc66565, type: 3}
   m_Name: HuntingRifle
   m_EditorClassIdentifier: 
-  gunName: 
   targetLayerMask:
     serializedVersion: 2
-    m_Bits: 0
-  shootingRange: 0
-  fireRate: 0
-  magazineSize: 0
-  reloadTime: 0
-  recoilAmount: 0
-  maxRecoil: {x: 0, y: 0}
-  recoilSpeed: 0
-  resetRecoilSpeed: 0
+    m_Bits: 17
+  shootingRange: 100
+  fireRate: 1
+  magazineSize: 5
+  reloadTime: 2
+  recoilAmount: 15
