@@ -55,7 +55,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 20.59
   m_FocusDistance: 10
-  m_FocalLength: 5.348414
+  m_FocalLength: 3.745
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -70,7 +70,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 70.00001
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1295,43 +1295,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2248459917798730910, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.006
+      value: -0.135
       objectReference: {fileID: 0}
     - target: {fileID: 2248459917798730910, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1
+      value: -0.241
       objectReference: {fileID: 0}
     - target: {fileID: 2248459917798730910, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.084
+      value: -0.015
       objectReference: {fileID: 0}
     - target: {fileID: 2248459917798730910, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9994448
       objectReference: {fileID: 0}
     - target: {fileID: 2248459917798730910, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.0318465
       objectReference: {fileID: 0}
     - target: {fileID: 2248459917798730910, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.00907402
       objectReference: {fileID: 0}
     - target: {fileID: 2248459917798730910, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.0036923748
       objectReference: {fileID: 0}
     - target: {fileID: 2248459917798730910, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -3.646
       objectReference: {fileID: 0}
     - target: {fileID: 2248459917798730910, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 1.055
       objectReference: {fileID: 0}
     - target: {fileID: 2248459917798730910, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -0.457
       objectReference: {fileID: 0}
     - target: {fileID: 2592010879591455802, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -1358,6 +1358,10 @@ PrefabInstance:
       value: Flashlight
       objectReference: {fileID: 0}
     - target: {fileID: 5876941881311113161, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
+      propertyPath: m_Range
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876941881311113161, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
       propertyPath: m_Cookie
       value: 
       objectReference: {fileID: 0}
@@ -1367,7 +1371,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5876941881311113161, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
       propertyPath: m_Intensity
-      value: 1
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876941881311113161, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
+      propertyPath: m_SpotAngle
+      value: 49.684635
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876941881311113161, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 38.773586
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6402962208993458187, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}

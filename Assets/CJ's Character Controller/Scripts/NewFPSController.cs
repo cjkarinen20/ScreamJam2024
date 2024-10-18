@@ -226,7 +226,6 @@ public class NewFPSController : MonoBehaviour
 
         if(desiredInput.magnitude <= 0 && isCurrentlyMoving && characterController.isGrounded){
             isCurrentlyMoving = false;
-            cameraAnim.SetTrigger("Idle");
             PlayScuffSound();
         }else if(desiredInput.magnitude > 0 && !isCurrentlyMoving){
             isCurrentlyMoving = true;
@@ -238,6 +237,8 @@ public class NewFPSController : MonoBehaviour
             }else{
                 cameraAnim.SetTrigger("Walk");
             }
+        }else{
+            cameraAnim.SetTrigger("Idle");
         }
 
         if(characterController.isGrounded){

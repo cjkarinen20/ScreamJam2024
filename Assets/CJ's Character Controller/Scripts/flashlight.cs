@@ -33,7 +33,7 @@ public class flashlight : MonoBehaviour
     {
         currentBatteryLevel = maxBattery;
         flashLight = GetComponent<Light>();
-        GetComponent<Light>().enabled = false;
+        flashLight.enabled = true;
         followTarget = Camera.main.gameObject;
         vectorOffset = transform.position - followTarget.transform.position;
     }
@@ -48,7 +48,7 @@ public class flashlight : MonoBehaviour
     }
     private void HandleBattery()
     {
-        if (batteryLifeEnabled && GetComponent<Light>().enabled)
+        if (batteryLifeEnabled && flashLight.enabled)
         {
             if (rechargingBattery != null)
             {
@@ -67,7 +67,7 @@ public class flashlight : MonoBehaviour
                 StartCoroutine(BatteryDeath());
             }
         }
-        if (!GetComponent<Light>().enabled && currentBatteryLevel < maxBattery && rechargingBattery == null)
+        if (!flashLight.enabled && currentBatteryLevel < maxBattery && rechargingBattery == null)
         {
             rechargingBattery = StartCoroutine(RechargeBattery());
         }
@@ -78,15 +78,15 @@ public class flashlight : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, followTarget.transform.rotation, speed * Time.deltaTime);
         if (Input.GetKeyDown(lightToggle))
         {
-            if (GetComponent<Light>().enabled)
+            if (flashLight.enabled)
             {
                 AudioSource.PlayOneShot(flashlightClick);
-                GetComponent<Light>().enabled = false;
+                flashLight.enabled = false;
             }
-            else if (!GetComponent<Light>().enabled && currentBatteryLevel > 0)
+            else if (!flashLight.enabled && currentBatteryLevel > 0)
             {
                 AudioSource.PlayOneShot(flashlightClick);
-                GetComponent<Light>().enabled = true;
+                flashLight.enabled = true;
             }
 
         }
@@ -111,6 +111,6 @@ public class flashlight : MonoBehaviour
     {
         AudioSource.PlayOneShot(flashlightFlicker);
         yield return new WaitForSeconds(2);
-        GetComponent<Light>().enabled = false;
+        flashLight.enabled = false;
     }
 }
