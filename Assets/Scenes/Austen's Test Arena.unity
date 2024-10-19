@@ -487,6 +487,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerController
       objectReference: {fileID: 0}
+    - target: {fileID: 1579732540750136643, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7196414042994286014, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -525,6 +529,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7196414042994286014, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936542601476450152, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -970,5 +978,4 @@ SceneRoots:
   - {fileID: 1111443138}
   - {fileID: 4348369798696388422}
   - {fileID: 1991458646013023853}
-  - {fileID: 1626724993}
   - {fileID: 4616524762228768426}
