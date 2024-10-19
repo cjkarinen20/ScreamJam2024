@@ -12,13 +12,17 @@ public class Breakable : MonoBehaviour, iBreakable
     private Rigidbody rb;
 
     private void Awake() {
-        if(TryGetComponent<Rigidbody>(out rb)){// ! Use this to sleep rigidbodies and wake them up with the OnBreak
+        if(TryGetComponent<Rigidbody>(out rb)){
             rb.constraints = RigidbodyConstraints.FreezeAll;
         }
     }
 
     public void Break()
     {
+        BoxCollider collider = GetComponent<BoxCollider>();// ! ONLY USE BOX COLLIDERS FOR BREAKABLES
+        collider.excludeLayers &= ~(1 << LayerMask.NameToLayer("Player"));
+        collider.size /= 2;
+
         if(rb != null) {
             rb.constraints = RigidbodyConstraints.None;
             rb.AddForce(new Vector3(UnityEngine.Random.Range(-2f, 2f), UnityEngine.Random.Range(-2f, 2f), UnityEngine.Random.Range(-2f, 2f)) * Time.fixedDeltaTime / 0.02f, ForceMode.Impulse);
