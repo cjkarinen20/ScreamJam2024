@@ -4,11 +4,10 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-[VolumeComponentMenuForRenderPipeline("Post-processing/Kuwahara Filter", typeof(UniversalRenderPipeline))]
-public class KuwaharaFilterEffectComponent : VolumeComponent, IPostProcessComponent
+[VolumeComponentMenuForRenderPipeline("Post-processing/ColorQuantization", typeof(UniversalRenderPipeline))]
+public class ColorQuantizationEffectComponent : VolumeComponent, IPostProcessComponent
 {
-    public ClampedIntParameter intensity = new ClampedIntParameter(0, 0, 50, false);
-
+    public IntParameter colorDepth = new IntParameter(256, false);
 
     public bool IsActive()
     {
