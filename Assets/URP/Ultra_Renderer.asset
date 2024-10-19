@@ -108,5 +108,5 @@ MonoBehaviour:
   m_Active: 1
   settings:
     injectionPoint: 550
-    screenWarpShader: {fileID: -6465566751694194690, guid: d7401c4b9050b36459875177f2efcd2e, type: 3}
+    screenWarpShader: {fileID: -6465566751694194690, guid: cd83f8d0d0bd015489fbaf72d8608068, type: 3}
     kuwaharaFilterShader: {fileID: -6465566751694194690, guid: 5757099ffae41df47883f11e60619620, type: 3}

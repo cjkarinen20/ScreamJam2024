@@ -23,27 +23,19 @@ public class CustomPostProcessRendererFeature : ScriptableRendererFeature
         private RTHandle depthTarget;
         private RenderTextureDescriptor descriptor;
 
-        private Material screenWarpMaterial;
+        private Material uberPostProcessMaterial;
         private ScreenWarpEffectComponent screenWarpEffect;
-        private RTHandle screenWarpTarget;
-        private int screenWarpTargetID;
-
-        private Material kuwaharaFilterMaterial;
         private KuwaharaFilterEffectComponent kuwaharaFilterEffect;
-        private RTHandle kuwaharaFilterTarget;
-        private int kuwaharaFilterTargetID;
+        private RTHandle UberPostTarget;
+        private int UberPostTargetID;
 
         public ScreenWarpPass(Settings s)
         {
             settings = s;
 
-            screenWarpMaterial = CoreUtils.CreateEngineMaterial(settings.screenWarpShader);
-            screenWarpTargetID = Shader.PropertyToID("_ScreenWarp");
-            screenWarpTarget = RTHandles.Alloc(screenWarpTargetID, name: "_ScreenWarp");
-
-            kuwaharaFilterMaterial = CoreUtils.CreateEngineMaterial(settings.kuwaharaFilterShader);
-            kuwaharaFilterTargetID = Shader.PropertyToID("_KuwarahaFilter");
-            kuwaharaFilterTarget = RTHandles.Alloc(kuwaharaFilterTargetID, name: "_KuwaharaFilter");
+            uberPostProcessMaterial = CoreUtils.CreateEngineMaterial(settings.uberPostShader);
+            UberPostTargetID = Shader.PropertyToID("_ScreenWarp");
+            UberPostTarget = RTHandles.Alloc(UberPostTargetID, name: "_ScreenWarp");
 
             renderPassEvent = settings.injectionPoint;
         }
@@ -71,27 +63,20 @@ public class CustomPostProcessRendererFeature : ScriptableRendererFeature
 
             using (customProfilingScope)
             {
-                SetupScreenWarp(cmd, colorTarget);
-
-                SetupKuwaharaFilter(cmd, colorTarget);
+                SetupUberPostShader(cmd, colorTarget);
             }
 
             context.ExecuteCommandBuffer(cmd);
             CommandBufferPool.Release(cmd);
         }
 
-        private void SetupScreenWarp(CommandBuffer cmd, RTHandle source)
+        private void SetupUberPostShader(CommandBuffer cmd, RTHandle source)
         {
-            Blitter.BlitCameraTexture(cmd, source, screenWarpTarget, RenderBufferLoadAction.DontCare, RenderBufferStoreAction.DontCare, screenWarpMaterial, 0);
+            Blitter.BlitCameraTexture(cmd, source, UberPostTarget, RenderBufferLoadAction.DontCare, RenderBufferStoreAction.DontCare, uberPostProcessMaterial, 0);
 
             cmd.SetGlobalFloat("_ScreenWarpIntensity", screenWarpEffect.intensity.value);
             cmd.SetGlobalFloat("_ScreenWarpSpeed", screenWarpEffect.speed.value);
             cmd.SetGlobalFloat("_ScreenWarpScale", screenWarpEffect.scale.value);
-        }
-
-        private void SetupKuwaharaFilter(CommandBuffer cmd, RTHandle source)
-        {
-            Blitter.BlitCameraTexture(cmd, source, kuwaharaFilterTarget, RenderBufferLoadAction.DontCare, RenderBufferStoreAction.DontCare, kuwaharaFilterMaterial, 0);
 
             cmd.SetGlobalFloat("_KuwaharaIntensity", kuwaharaFilterEffect.intensity.value);
         }
@@ -118,11 +103,9 @@ public class CustomPostProcessRendererFeature : ScriptableRendererFeature
     [System.Serializable]
     public class Settings
     {
-        //public string TextureName = "_GrabPassTransparent";
         public RenderPassEvent injectionPoint = RenderPassEvent.BeforeRenderingPostProcessing;
 
-        public Shader screenWarpShader;
-        public Shader kuwaharaFilterShader;
+        public Shader uberPostShader;
     }
 
 }
