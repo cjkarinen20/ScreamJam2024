@@ -1435,6 +1435,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 5891196016057834383}
     m_Modifications:
     - target: {fileID: 195505296342551331, guid: e56bcf0d22a75ee41a6ae4a08d31298e, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195505296342551331, guid: e56bcf0d22a75ee41a6ae4a08d31298e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3cad472160d10024c9e8b5e476caa36b, type: 2}
@@ -1500,7 +1504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8754582154542786824, guid: e56bcf0d22a75ee41a6ae4a08d31298e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
