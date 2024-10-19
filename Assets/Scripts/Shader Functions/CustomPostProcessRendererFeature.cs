@@ -10,11 +10,11 @@ public class CustomPostProcessRendererFeature : ScriptableRendererFeature
 
     [SerializeField] Settings settings;
 
-    private ScreenWarpPass m_customPass;
+    private UberPostPass m_customPass;
 
 
 
-    public class ScreenWarpPass : ScriptableRenderPass
+    public class UberPostPass : ScriptableRenderPass
     {
         private Settings settings;
 
@@ -26,16 +26,17 @@ public class CustomPostProcessRendererFeature : ScriptableRendererFeature
         private Material uberPostProcessMaterial;
         private ScreenWarpEffectComponent screenWarpEffect;
         private KuwaharaFilterEffectComponent kuwaharaFilterEffect;
+        private ColorQuantizationEffectComponent colorQuantizationEffect;
         private RTHandle UberPostTarget;
         private int UberPostTargetID;
 
-        public ScreenWarpPass(Settings s)
+        public UberPostPass(Settings s)
         {
             settings = s;
 
             uberPostProcessMaterial = CoreUtils.CreateEngineMaterial(settings.uberPostShader);
-            UberPostTargetID = Shader.PropertyToID("_ScreenWarp");
-            UberPostTarget = RTHandles.Alloc(UberPostTargetID, name: "_ScreenWarp");
+            UberPostTargetID = Shader.PropertyToID("_UberPost");
+            UberPostTarget = RTHandles.Alloc(UberPostTargetID, name: "_UberPost");
 
             renderPassEvent = settings.injectionPoint;
         }
@@ -56,6 +57,7 @@ public class CustomPostProcessRendererFeature : ScriptableRendererFeature
             VolumeStack stack = VolumeManager.instance.stack;
             screenWarpEffect = stack.GetComponent<ScreenWarpEffectComponent>();
             kuwaharaFilterEffect = stack.GetComponent<KuwaharaFilterEffectComponent>();
+            colorQuantizationEffect = stack.GetComponent<ColorQuantizationEffectComponent>();
 
             CommandBuffer cmd = CommandBufferPool.Get();
 
@@ -78,14 +80,16 @@ public class CustomPostProcessRendererFeature : ScriptableRendererFeature
             cmd.SetGlobalFloat("_ScreenWarpSpeed", screenWarpEffect.speed.value);
             cmd.SetGlobalFloat("_ScreenWarpScale", screenWarpEffect.scale.value);
 
-            cmd.SetGlobalFloat("_KuwaharaIntensity", kuwaharaFilterEffect.intensity.value);
+            cmd.SetGlobalInt("_KuwaharaIntensity", kuwaharaFilterEffect.intensity.value);
+
+            cmd.SetGlobalInt("_ScreenColorDepth", colorQuantizationEffect.colorDepth.value);
         }
     }
 
 
     public override void Create()
     {
-        m_customPass = new ScreenWarpPass(settings);
+        m_customPass = new UberPostPass(settings);
     }
 
     public override void SetupRenderPasses(ScriptableRenderer renderer, in RenderingData renderingData)
