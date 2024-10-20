@@ -1,5 +1,6 @@
 nowhere_never - main menu
 insensible rocks - fade in
+steep cliff - cutscene
 abandoned place - town ambient
 souls of mine - mine ambient
 the_cry_of_the_monster - Sherwood cave scene
