@@ -5,3 +5,4 @@ souls of mine - mine ambient
 the_cry_of_the_monster - Sherwood cave scene
 rifle - rifle
 beast - final confrontation 
+rescue - credits
