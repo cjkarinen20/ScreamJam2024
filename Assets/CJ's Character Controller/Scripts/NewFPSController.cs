@@ -8,7 +8,14 @@ using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 
 public class NewFPSController : MonoBehaviour
-{
+{   
+    [SerializeField] private Slider staminaSlider;
+    [SerializeField] private InventorySystem inventory;
+    [SerializeField] private AudioSource voiceSounds;
+    [SerializeField] private AudioClip[] hurt, jump, outOfStam, toolUse;
+
+    private enum TypeOfAudio {HURT, JUMP, OUTOFSTAM, TOOLUSE}
+    
     public bool canMove = true;
     private bool isSprinting => sprintEnabled && Input.GetKey(sprintKey) && Input.GetKey(KeyCode.W) && !isCrouching;
     private bool shouldJump => Input.GetKeyDown(jumptKey) && characterController.isGrounded && !isCrouching;
@@ -214,6 +221,8 @@ public class NewFPSController : MonoBehaviour
 
             ApplyFinalMovement();
         }
+
+        staminaSlider.value = currentStamina;
     }
     private void HandleMovementInput()
     {
@@ -261,7 +270,8 @@ public class NewFPSController : MonoBehaviour
     }
     private void HandleJump()
     {
-        if (shouldJump){
+        if (shouldJump && sprintEnabled){
+            PlayVoiceSound(TypeOfAudio.JUMP);
             moveDirection.y = jumpForce;
             cameraAnim.SetTrigger("Jump");
         }
@@ -305,6 +315,7 @@ public class NewFPSController : MonoBehaviour
 
             if (currentStamina <= 0)
             {
+                PlayVoiceSound(TypeOfAudio.OUTOFSTAM);
                 staminaAudioSource.PlayOneShot(staminaOutSound);
                 sprintEnabled = false;
 
@@ -433,6 +444,7 @@ public class NewFPSController : MonoBehaviour
     }
     public void ApplyDamage(float damage)
     {
+        PlayVoiceSound(TypeOfAudio.HURT);
         currentHealth -= damage;
         OnDamage?.Invoke(currentHealth);
 
@@ -469,6 +481,19 @@ public class NewFPSController : MonoBehaviour
                 }
                 if(hit.collider.TryGetComponent(out iBreakable breakable)){
                     if(breakable != null){
+                        if(breakable.transform.TryGetComponent<Breakable>(out Breakable childBreakable) && !childBreakable.hasBeenBroken && childBreakable.requiredTool == iBreakable.RequiredTool.Crowbar){
+                            if(childBreakable.requiredTool == iBreakable.RequiredTool.Crowbar && !inventory.hasCrowbar) return;
+
+                            inventory.UseCrowbar();
+                            PlayVoiceSound(TypeOfAudio.TOOLUSE);
+                        }
+                        if(breakable.transform.TryGetComponent<Breakable>(out childBreakable) && !childBreakable.hasBeenBroken && childBreakable.requiredTool == iBreakable.RequiredTool.Boltcutters){
+                            if(childBreakable.requiredTool == iBreakable.RequiredTool.Boltcutters && !inventory.hasBoltCutters) return;
+
+                            inventory.UseBoltCutter();
+                            PlayVoiceSound(TypeOfAudio.TOOLUSE);
+                        }
+
                         breakable.OnInteract();
                     }
                 }
@@ -556,5 +581,29 @@ public class NewFPSController : MonoBehaviour
             yield return timeToWait;
         }
         regeneratingStamina = null;
+    }
+
+    private void PlayVoiceSound (TypeOfAudio typeOfAudio) {
+        switch (typeOfAudio) {
+            case TypeOfAudio.HURT:
+                voiceSounds.clip = hurt[UnityEngine.Random.Range(0, hurt.Length)];
+                voiceSounds.Play();
+                break;
+            case TypeOfAudio.JUMP:
+                voiceSounds.clip = jump[UnityEngine.Random.Range(0, jump.Length)];
+                voiceSounds.Play();
+                break;
+            case TypeOfAudio.OUTOFSTAM:
+                voiceSounds.clip = outOfStam[UnityEngine.Random.Range(0, outOfStam.Length)];
+                voiceSounds.Play();
+                break;
+            case TypeOfAudio.TOOLUSE:
+                voiceSounds.clip = toolUse[UnityEngine.Random.Range(0, toolUse.Length)];
+                voiceSounds.Play();
+                break;
+            default :
+                
+                break;
+        }
     }
 }

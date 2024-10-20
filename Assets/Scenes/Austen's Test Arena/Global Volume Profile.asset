@@ -16,6 +16,22 @@ MonoBehaviour:
   intensity:
     m_OverrideState: 1
     m_Value: 0.1
+--- !u!114 &-7205275719521456544
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a0dc59c57899e4787bf7ad37b8c796, type: 3}
+  m_Name: KuwaharaFilterPostProcessEffect
+  m_EditorClassIdentifier: 
+  active: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 2
 --- !u!114 &-6953799023728659551
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -67,7 +83,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   saturation:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: -20
 --- !u!114 &-5453247596151276366
 MonoBehaviour:
@@ -95,6 +111,28 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0.2
   rounded:
+    m_OverrideState: 1
+    m_Value: 1
+--- !u!114 &-3173912253744797283
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df241af8d2f94b3418e4aca021299393, type: 3}
+  m_Name: ScreenWarpEffectComponent
+  m_EditorClassIdentifier: 
+  active: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.004
+  scale:
+    m_OverrideState: 1
+    m_Value: 1
+  speed:
     m_OverrideState: 1
     m_Value: 1
 --- !u!114 &-2139677761760018594
@@ -143,6 +181,9 @@ MonoBehaviour:
   - {fileID: -5453247596151276366}
   - {fileID: -7326633511294533408}
   - {fileID: -6569154809491660359}
+  - {fileID: -3173912253744797283}
+  - {fileID: -7205275719521456544}
+  - {fileID: 7807988391435344804}
 --- !u!114 &3008833662502863833
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -258,3 +299,19 @@ MonoBehaviour:
   dirtIntensity:
     m_OverrideState: 0
     m_Value: 0
+--- !u!114 &7807988391435344804
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53c70417494bf4642bcc8c43c0ef6f8b, type: 3}
+  m_Name: ColorQuantizationEffectComponent
+  m_EditorClassIdentifier: 
+  active: 1
+  colorDepth:
+    m_OverrideState: 1
+    m_Value: 64
