@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mat_VolumetricLight
+  m_Name: Mat_VolumetricLight_FlashlightInner
   m_Shader: {fileID: -6465566751694194690, guid: 69d60f04798540a4ebaa3abe767ad2ef, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -54,9 +54,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _EdgeFalloff: 0.5
-    - _FadeDistance: 2
-    - _Opacity: 1
+    - _EdgeFalloff: 1
+    - _FadeDistance: 1
+    - _Opacity: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _TexturePanningSpeed: 0.02
