@@ -1429,6 +1429,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 341713054131717531}
     - target: {fileID: 3233181597555319195, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
+      propertyPath: flashlightVolume
+      value: 
+      objectReference: {fileID: 1579732540750136643}
+    - target: {fileID: 3233181597555319195, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
       propertyPath: batteryLifeEnabled
       value: 0
       objectReference: {fileID: 0}
@@ -1613,6 +1617,11 @@ PrefabInstance:
       addedObject: {fileID: 8641924766876401993}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e56bcf0d22a75ee41a6ae4a08d31298e, type: 3}
+--- !u!1 &1579732540750136643 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8754582154542786824, guid: e56bcf0d22a75ee41a6ae4a08d31298e, type: 3}
+  m_PrefabInstance: {fileID: 7823544706678565963}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7086271223300201333 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1064448578633021246, guid: e56bcf0d22a75ee41a6ae4a08d31298e, type: 3}
