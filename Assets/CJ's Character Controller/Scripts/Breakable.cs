@@ -5,13 +5,14 @@ using static iBreakable;
 
 public class Breakable : MonoBehaviour, iBreakable
 {
-    [Header("Breakable Parameters")]
-    [SerializeField] private RequiredTool requiredTool;
+    [SerializeField] public RequiredTool requiredTool {private set; get;}
 
     [SerializeField] private UnityEvent onBreak;
     private Rigidbody rb;
+    public bool hasBeenBroken {private set; get;}
 
     private void Awake() {
+        hasBeenBroken = false;
         if(TryGetComponent<Rigidbody>(out rb)){
             rb.constraints = RigidbodyConstraints.FreezeAll;
         }
@@ -19,8 +20,21 @@ public class Breakable : MonoBehaviour, iBreakable
 
     public void Break()
     {
+        if(hasBeenBroken) return;
+
+        hasBeenBroken = true;
+        
+        float delay = 0;
+        if(requiredTool == RequiredTool.Crowbar) delay = .7f;
+        if(requiredTool == RequiredTool.Boltcutters) delay = 1.15f;
+
+        Invoke("FullBreak", delay);
+    }
+
+    private void FullBreak () {
         BoxCollider collider = GetComponent<BoxCollider>();// ! ONLY USE BOX COLLIDERS FOR BREAKABLES
-        collider.excludeLayers &= ~(1 << LayerMask.NameToLayer("Player"));
+        collider.layerOverridePriority = 10000;
+        collider.excludeLayers |= (1 << LayerMask.NameToLayer("Player"));
         collider.size /= 2;
 
         if(rb != null) {

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface iBreakable
 {
+    Transform transform  { get; }
     public enum RequiredTool
     {
         Crowbar,
