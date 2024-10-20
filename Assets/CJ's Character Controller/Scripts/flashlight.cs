@@ -15,6 +15,7 @@ public class flashlight : MonoBehaviour
     public KeyCode lightToggle = KeyCode.F;
     private Vector3 vectorOffset;
     [SerializeField] private float speed = 3.0f;
+    [SerializeField] private GameObject flashlightVolume; // Added to handle disableing volumetic light
 
 
     [Header("Battery Life Parameters")]
@@ -34,6 +35,7 @@ public class flashlight : MonoBehaviour
         currentBatteryLevel = maxBattery;
         flashLight = GetComponent<Light>();
         flashLight.enabled = true;
+        flashlightVolume.SetActive(true);
         followTarget = Camera.main.gameObject;
         vectorOffset = transform.position - followTarget.transform.position;
     }
@@ -84,11 +86,13 @@ public class flashlight : MonoBehaviour
             {
                 AudioSource.PlayOneShot(flashlightClick);
                 flashLight.enabled = false;
+                flashlightVolume.SetActive(false);
             }
             else if (!flashLight.enabled && currentBatteryLevel > 0)
             {
                 AudioSource.PlayOneShot(flashlightClick);
                 flashLight.enabled = true;
+                flashlightVolume.SetActive(true);
             }
 
         }
@@ -114,5 +118,6 @@ public class flashlight : MonoBehaviour
         AudioSource.PlayOneShot(flashlightFlicker);
         yield return new WaitForSeconds(2);
         flashLight.enabled = false;
+        flashlightVolume.SetActive(false);
     }
 }
