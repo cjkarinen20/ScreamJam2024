@@ -8,13 +8,16 @@ public class Gun : MonoBehaviour
     private NewFPSController playerController;
     private Transform cameraTransform;
 
-    private float currentAmmo = 0f;
-    private float nextTimeToFire = 0f;
+    [HideInInspector]
+    public int currentAmmo;
+    public float nextTimeToFire = 0f;
 
-    private bool isReloading = false;
+    [HideInInspector]
+    public bool isReloading;
 
     private void Start()
     {
+        isReloading = false;
         currentAmmo = gunData.magazineSize;
 
         playerController = transform.root.GetComponent<NewFPSController>();
@@ -40,7 +43,7 @@ public class Gun : MonoBehaviour
         }
     }
 
-    public void TryReload()
+    public virtual void TryReload()
     {
         if (!isReloading && currentAmmo < gunData.magazineSize)
         {
@@ -60,7 +63,7 @@ public class Gun : MonoBehaviour
 
         Debug.Log(gunData.name + ": is reloaded");
     }
-    public void TryShoot()
+    public virtual void TryShoot()
     {
         if (isReloading){
             Debug.Log(gunData.name + ": is reloading...");
@@ -77,7 +80,7 @@ public class Gun : MonoBehaviour
             HandleShoot();
         }
     }
-    private void HandleShoot()
+    public void HandleShoot()
     {
         currentAmmo--;
         Debug.Log(gunData.name + ": Shot, Ammo Left:" + currentAmmo);

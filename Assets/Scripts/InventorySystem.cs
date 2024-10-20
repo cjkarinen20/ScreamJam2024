@@ -35,11 +35,6 @@ public class InventorySystem : MonoBehaviour
     private void Update() {
         if(Input.GetKeyDown("1")){
             SetGunState(0, true);
-            SetGunState(1, false);
-        }
-        if(Input.GetKeyDown("2")){
-            SetGunState(0, false);
-            SetGunState(1, true);
         }
     }
 
