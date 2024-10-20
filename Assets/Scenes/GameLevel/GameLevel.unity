@@ -122,6 +122,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!82 &5 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 330455604159971004, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+  m_PrefabInstance: {fileID: 2046614411}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1005513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -144,31 +149,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.13
+      value: 10.85
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.16
+      value: -5.95
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.42
+      value: -2.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7457544
+      value: 0.73476934
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.6123835
+      value: 0.5855052
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.25035852
+      value: -0.30802038
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.07847004
+      value: 0.1497369
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -180,12 +185,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 321.419
+      value: 332.442
       objectReference: {fileID: 0}
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14 (5)
@@ -304,6 +309,132 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6243737997953737696, guid: 43b4eb9806eeab94ca1bc4d1cc7459d2, type: 3}
   m_PrefabInstance: {fileID: 20190956}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &24796810
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.272874
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.272874
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.2728724
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 198.55786
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 25.43216
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 259.1621
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6789289
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.199963
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.68327457
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.179461
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -31.115
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -269.083
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -361.98
+      objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
+    - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_Name
+      value: moss rock 14 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 24796812}
+  m_SourcePrefab: {fileID: 100100000, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+--- !u!1 &24796811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+  m_PrefabInstance: {fileID: 24796810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &24796812
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24796811}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2432090755550338912, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+--- !u!114 &37657891 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2703988301214180902, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+  m_PrefabInstance: {fileID: 2046614411}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029c6c5390f14854db98be0720cab0e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &47686133
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,7 +656,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14 (6)
@@ -645,7 +776,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14 (5)
@@ -822,7 +953,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14 (8)
@@ -1178,7 +1309,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14
@@ -1424,7 +1555,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2441,7 +2572,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14
@@ -2629,7 +2760,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14 (6)
@@ -3183,7 +3314,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3593,7 +3724,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5504,7 +5635,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14 (2)
@@ -6427,7 +6558,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14 (4)
@@ -6814,7 +6945,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7722,7 +7853,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8075,7 +8206,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8428,7 +8559,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12057,7 +12188,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14 (2)
@@ -12177,7 +12308,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14 (1)
@@ -13304,7 +13435,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14 (9)
@@ -14580,7 +14711,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14925,7 +15056,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14 (3)
@@ -15511,7 +15642,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16031,15 +16162,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.858429
+      value: 11.88
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 29.38172
+      value: 29.38
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -44.414154
+      value: -44.33
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16072,7 +16203,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14 (4)
@@ -16200,7 +16331,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27931,7 +28062,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29595,7 +29726,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30276,7 +30407,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30686,7 +30817,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -31031,7 +31162,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14 (7)
@@ -31571,7 +31702,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -35208,7 +35339,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -37976,7 +38107,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14 (11)
@@ -38331,6 +38462,121 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464468253}
   m_Mesh: {fileID: -5025983569989918410, guid: 11faaeb2c067a024e842a47ad16f3739, type: 3}
+--- !u!1001 &1465589565
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.272874
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.272874
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.2728724
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 208.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 30.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 248.9
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7008794
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.32920107
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.63124955
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.043804504
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -31.115
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -269.083
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -384.44
+      objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
+    - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_Name
+      value: moss rock 14 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1465589567}
+  m_SourcePrefab: {fileID: 100100000, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+--- !u!1 &1465589566 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+  m_PrefabInstance: {fileID: 1465589565}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1465589567
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465589566}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2432090755550338912, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
 --- !u!4 &1466241026 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7305674028654613619, guid: 10d28ff3e7d102f40a369f30ffa692d5, type: 3}
@@ -40908,7 +41154,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14 (7)
@@ -41028,7 +41274,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14 (1)
@@ -41300,6 +41546,121 @@ Transform:
   - {fileID: 1551872298}
   m_Father: {fileID: 372227637}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1894744957
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.0073495
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.0073495
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.007348
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 197.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.21
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 253.93
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.69759095
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.07844713
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6996759
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.13291548
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -4.39
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -270.49402
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 17.223
+      objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
+    - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_Name
+      value: moss rock 14 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1894744959}
+  m_SourcePrefab: {fileID: 100100000, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+--- !u!1 &1894744958 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+  m_PrefabInstance: {fileID: 1894744957}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1894744959
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894744958}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2432090755550338912, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
 --- !u!1001 &1894840956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41431,6 +41792,121 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10d28ff3e7d102f40a369f30ffa692d5, type: 3}
+--- !u!1001 &1912290944
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.272874
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.272874
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.2728724
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 161.69
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.083772
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 211.79
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.11398632
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.12851457
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9830782
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.063627616
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -8.882
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -167.861
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -346.051
+      objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
+    - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_Name
+      value: moss rock 14 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1912290946}
+  m_SourcePrefab: {fileID: 100100000, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+--- !u!1 &1912290945 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+  m_PrefabInstance: {fileID: 1912290944}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1912290946
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912290945}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2432090755550338912, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
 --- !u!43 &1924187903
 Mesh:
   m_ObjectHideFlags: 0
@@ -41832,7 +42308,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -42185,7 +42661,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -42530,7 +43006,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14 (3)
@@ -42655,7 +43131,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 72c097cd4b58812489b6117cd801ccf7, type: 2}
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
     - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
       propertyPath: m_Name
       value: moss rock 14 (10)
@@ -42910,7 +43386,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -43204,6 +43680,110 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerController
       objectReference: {fileID: 0}
+    - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 37657891}
+    - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: voiceSounds
+      value: 
+      objectReference: {fileID: 5}
+    - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: hurt.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: jump.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: hurt.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f5d07e5e427aa144ade39ade962b370, type: 3}
+    - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: hurt.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: fe274ca51914e8343937be42afe7b3bd, type: 3}
+    - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: hurt.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: c245793e5bdba004983d9cb3484065d3, type: 3}
+    - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: jump.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c0b3b6bd09a4e004bb7e607305765c31, type: 3}
+    - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: jump.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9615c642f45560e4e8e34624e1f2f873, type: 3}
+    - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: jump.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 868d18d7b96b135499f210748b5784b0, type: 3}
+    - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: toolUse.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: outOfStam.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: toolUse.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5915981c072e814489d50fc9f7cb470e, type: 3}
+    - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: toolUse.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 90ade881ec7b355409974b965d68f5b5, type: 3}
+    - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: toolUse.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f7c24e3a459d904d8736eef58d9a0c1, type: 3}
+    - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: outOfStam.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 475d5a2b82c7fb74d83f22fd4e930d54, type: 3}
+    - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: outOfStam.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: a44780fffbd226941b02d33a35c8101e, type: 3}
+    - target: {fileID: 4068575434242562147, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: outOfStam.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: af2266a01fd85aa47b2b8984b172c4fe, type: 3}
+    - target: {fileID: 6221128391959505621, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221128391959505621, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221128391959505621, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221128391959505621, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6746419966276515663, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6746419966276515663, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6746419966276515663, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6746419966276515663, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7196414042994286014, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
       propertyPath: m_LocalPosition.x
       value: 353
@@ -43242,6 +43822,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7196414042994286014, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021516753960925722, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021516753960925722, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021516753960925722, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021516753960925722, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414574135723347501, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414574135723347501, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414574135723347501, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414574135723347501, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8545139089705770492, guid: 2891f01b80d78b144b1a12d157415111, type: 3}
@@ -43379,7 +43991,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bd2f5350325bb474f81a7d5482061bdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -44117,6 +44729,10 @@ SceneRoots:
   - {fileID: 673256678}
   - {fileID: 2022441387}
   - {fileID: 1383370020}
+  - {fileID: 1912290944}
+  - {fileID: 1894744957}
+  - {fileID: 24796810}
+  - {fileID: 1465589565}
   - {fileID: 678350966}
   - {fileID: 2052345694}
   - {fileID: 1210677631}
