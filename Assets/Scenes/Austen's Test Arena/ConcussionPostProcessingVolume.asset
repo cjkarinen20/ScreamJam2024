@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 1
 --- !u!114 &-7205275719521456544
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -75,7 +75,7 @@ MonoBehaviour:
     m_Value: 0
   contrast:
     m_OverrideState: 1
-    m_Value: 22
+    m_Value: 0
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -106,7 +106,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.28
+    m_Value: 0.494
   smoothness:
     m_OverrideState: 0
     m_Value: 0.2
@@ -128,10 +128,10 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.004
+    m_Value: 0.2
   scale:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 2
   speed:
     m_OverrideState: 1
     m_Value: 1
@@ -156,7 +156,7 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 0.795
   clamp:
     m_OverrideState: 0
     m_Value: 0.05
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: Global Volume Profile
+  m_Name: ConcussionPostProcessingVolume
   m_EditorClassIdentifier: 
   components:
   - {fileID: 4139880819213228378}
@@ -199,7 +199,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.08
+    m_Value: 0.69
   xMultiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -273,7 +273,7 @@ MonoBehaviour:
     m_Value: 0.6
   intensity:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 200
   scatter:
     m_OverrideState: 0
     m_Value: 0.7
