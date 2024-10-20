@@ -10,11 +10,12 @@ public class flashlight : MonoBehaviour
     public AudioSource AudioSource;
     public AudioClip flashlightClick;
     public AudioClip flashlightFlicker;
-    public GameObject followTarget;
+    public GameObject followTarget, volumetricCone;
     public Light flashLight;
     public KeyCode lightToggle = KeyCode.F;
     private Vector3 vectorOffset;
     [SerializeField] private float speed = 3.0f;
+    [SerializeField] private GameObject flashlightVolume; // Added to handle disableing volumetic light
 
 
     [Header("Battery Life Parameters")]
@@ -34,6 +35,7 @@ public class flashlight : MonoBehaviour
         currentBatteryLevel = maxBattery;
         flashLight = GetComponent<Light>();
         flashLight.enabled = true;
+        flashlightVolume.SetActive(true);
         followTarget = Camera.main.gameObject;
         vectorOffset = transform.position - followTarget.transform.position;
     }
@@ -74,19 +76,25 @@ public class flashlight : MonoBehaviour
     }
     private void HandleFlashlight()
     {
-        transform.position = followTarget.transform.position + vectorOffset;
+        //Added this line to rotate the offset vector according to the players facing direction
+        Vector3 rotatedVectorOffset = Vector3.RotateTowards(vectorOffset, followTarget.transform.forward, float.MaxValue, float.MaxValue);
+        transform.position = followTarget.transform.position + rotatedVectorOffset; // Replaced vectorOffset with rotatedVectorOffset variable
         transform.rotation = Quaternion.Slerp(transform.rotation, followTarget.transform.rotation, speed * Time.deltaTime);
         if (Input.GetKeyDown(lightToggle))
         {
             if (flashLight.enabled)
             {
+                volumetricCone.SetActive(false);
                 AudioSource.PlayOneShot(flashlightClick);
                 flashLight.enabled = false;
+                flashlightVolume.SetActive(false);
             }
             else if (!flashLight.enabled && currentBatteryLevel > 0)
             {
+                volumetricCone.SetActive(true);
                 AudioSource.PlayOneShot(flashlightClick);
                 flashLight.enabled = true;
+                flashlightVolume.SetActive(true);
             }
 
         }
@@ -112,5 +120,6 @@ public class flashlight : MonoBehaviour
         AudioSource.PlayOneShot(flashlightFlicker);
         yield return new WaitForSeconds(2);
         flashLight.enabled = false;
+        flashlightVolume.SetActive(false);
     }
 }
