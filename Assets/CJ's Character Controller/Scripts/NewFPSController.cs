@@ -327,7 +327,6 @@ public class NewFPSController : MonoBehaviour
             if (currentStamina <= 0)
             {
                 PlayVoiceSound(TypeOfAudio.OUTOFSTAM);
-                staminaAudioSource.PlayOneShot(staminaOutSound);
                 sprintEnabled = false;
 
             }
