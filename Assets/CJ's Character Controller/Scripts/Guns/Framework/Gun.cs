@@ -5,6 +5,7 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public GunData gunData;
+    public GameObject muzzleFlash;
     private NewFPSController playerController;
     private Transform cameraTransform;
 
@@ -88,6 +89,8 @@ public class Gun : MonoBehaviour
     }
 
     public virtual void Shoot(){
+        MuzzleFlash();
+        
         playerController.AddRecoil(gunData);
 
         RaycastHit hit;
@@ -96,5 +99,13 @@ public class Gun : MonoBehaviour
         {
             Debug.Log(gunData.name + ": hit " + hit.collider.name);
         }
+    }
+
+    public void MuzzleFlash(){
+        muzzleFlash.SetActive(true);
+        Invoke("ResetMuzzleFlash", Random.Range(0.06f, .1f));
+    }
+    public void ResetMuzzleFlash () {
+        muzzleFlash.SetActive(false);
     }
 }

@@ -15,8 +15,8 @@ public class Door : MonoBehaviour, Interactable
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        animator = transform.parent.GetComponent<Animator>();
+        audioSource = transform.parent.GetComponent<AudioSource>();
     }
     public void OnFocus()
     {
