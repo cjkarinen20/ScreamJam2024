@@ -504,6 +504,8 @@ public class NewFPSController : MonoBehaviour
                             PlayVoiceSound(TypeOfAudio.TOOLUSE);
                         }
 
+                        if(breakable.transform.TryGetComponent<Breakable>(out childBreakable) && !childBreakable.hasBeenBroken && childBreakable.requiredTool == iBreakable.RequiredTool.Key && !inventory.hasKey) return;
+
                         breakable.OnInteract();
                     }
                 }

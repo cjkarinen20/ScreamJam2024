@@ -10031,6 +10031,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  destroyCollider: 1
 --- !u!65 &8621352089592981331
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19984,7 +19985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fe70a1fd3557ca4f96d63b3b287c808, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.513153
+      value: -14.41
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fe70a1fd3557ca4f96d63b3b287c808, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19992,7 +19993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fe70a1fd3557ca4f96d63b3b287c808, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.50523376
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fe70a1fd3557ca4f96d63b3b287c808, type: 3}
       propertyPath: m_LocalRotation.w
