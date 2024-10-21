@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class testInteractable : Interactable
 {
-    public void OnInteract()
+    public void OnInteract(bool calledFromPlayer = true)
     {
         //Debug.Log("INTERACTED WITH " + gameObject.name);
     }

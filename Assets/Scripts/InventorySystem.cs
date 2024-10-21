@@ -10,13 +10,19 @@ public class InventorySystem : MonoBehaviour
     private Animator crowbarAnim, boltCutterAnim;
     public bool hasCrowbar {private set; get;}
     public bool hasBoltCutters {private set; get;}
+    public bool hasKey {private set; get;}
+    public bool hasLadder {private set; get;}
+
 
     private void Awake() {
         if(instance == null){
             instance = this;
         }
+        
         hasCrowbar = false;
         hasBoltCutters = false;
+        hasKey = false;
+        hasLadder = false;
         
         for(int i = 0; i < guns.Length; i++) {
             SetGunState(i, false);
@@ -48,6 +54,14 @@ public class InventorySystem : MonoBehaviour
 
     public void GiveBoltCutters(){
         hasBoltCutters = true;
+    }
+
+    public void GiveKey () {
+        hasKey = true;
+    }
+
+    public void GiveLadder () {
+        hasLadder = true;
     }
 
     public void UseCrowbar () {

@@ -6,10 +6,10 @@ using static iBreakable;
 public class Breakable : MonoBehaviour, iBreakable
 {
     public RequiredTool requiredTool;
-
     [SerializeField] private UnityEvent onBreak;
     private Rigidbody rb;
     public bool hasBeenBroken {private set; get;}
+    public bool destroyCollider = false;
 
     private void Awake() {
         hasBeenBroken = false;
@@ -33,6 +33,7 @@ public class Breakable : MonoBehaviour, iBreakable
 
     private void FullBreak () {
         if(TryGetComponent<BoxCollider>(out BoxCollider collider)){// ! ONLY USE BOX COLLIDERS FOR BREAKABLES
+            if(destroyCollider) Destroy(collider);
             collider.layerOverridePriority = 10000;
             collider.excludeLayers |= (1 << LayerMask.NameToLayer("Player"));
             collider.size /= 2;
