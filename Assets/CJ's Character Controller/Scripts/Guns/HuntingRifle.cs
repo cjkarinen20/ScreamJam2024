@@ -10,6 +10,7 @@ public class HuntingRifle : Gun
     [SerializeField] private TextMeshProUGUI ammoText;
 
     private void OnEnable() {
+        ResetMuzzleFlash();
         anim.Rebind();
         ammoText.text = currentAmmo.ToString("0") + "/" + gunData.magazineSize;
     }
