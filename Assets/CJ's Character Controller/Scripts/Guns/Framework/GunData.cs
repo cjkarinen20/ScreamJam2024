@@ -14,7 +14,7 @@ public class GunData : ScriptableObject
     public float fireRate = 4;
 
     [Header("Reload Config")]
-    public float magazineSize = 5;
+    public int magazineSize = 5;
     public float reloadTime = 2;
 
     [Header("Recoil")]

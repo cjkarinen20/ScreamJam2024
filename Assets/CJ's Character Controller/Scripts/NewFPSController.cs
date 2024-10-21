@@ -9,6 +9,8 @@ using Unity.VisualScripting;
 
 public class NewFPSController : MonoBehaviour
 {   
+    public enum PlayerMovementState {IDLE, WALKING, RUNNING}
+    public PlayerMovementState playerMovementState {private set; get;}
     [SerializeField] private Slider staminaSlider;
     [SerializeField] private InventorySystem inventory;
     [SerializeField] private AudioSource voiceSounds;
@@ -242,12 +244,21 @@ public class NewFPSController : MonoBehaviour
 
         if(desiredInput.magnitude > 0){
             if(isSprinting){
+                cameraAnim.ResetTrigger("Walk");
+                cameraAnim.ResetTrigger("Idle");
                 cameraAnim.SetTrigger("Run");
+                playerMovementState = PlayerMovementState.RUNNING;
             }else{
+                cameraAnim.ResetTrigger("Idle");
+                cameraAnim.ResetTrigger("Run");
                 cameraAnim.SetTrigger("Walk");
+                playerMovementState = PlayerMovementState.WALKING;
             }
         }else{
+            cameraAnim.ResetTrigger("Walk");
+            cameraAnim.ResetTrigger("Run");
             cameraAnim.SetTrigger("Idle");
+            playerMovementState = PlayerMovementState.IDLE;
         }
 
         if(characterController.isGrounded){
