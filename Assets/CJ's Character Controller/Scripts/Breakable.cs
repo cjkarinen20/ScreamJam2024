@@ -5,7 +5,7 @@ using static iBreakable;
 
 public class Breakable : MonoBehaviour, iBreakable
 {
-    [SerializeField] public RequiredTool requiredTool {private set; get;}
+    public RequiredTool requiredTool;
 
     [SerializeField] private UnityEvent onBreak;
     private Rigidbody rb;
@@ -32,11 +32,12 @@ public class Breakable : MonoBehaviour, iBreakable
     }
 
     private void FullBreak () {
-        BoxCollider collider = GetComponent<BoxCollider>();// ! ONLY USE BOX COLLIDERS FOR BREAKABLES
-        collider.layerOverridePriority = 10000;
-        collider.excludeLayers |= (1 << LayerMask.NameToLayer("Player"));
-        collider.size /= 2;
-
+        if(TryGetComponent<BoxCollider>(out BoxCollider collider)){// ! ONLY USE BOX COLLIDERS FOR BREAKABLES
+            collider.layerOverridePriority = 10000;
+            collider.excludeLayers |= (1 << LayerMask.NameToLayer("Player"));
+            collider.size /= 2;
+        }
+        
         if(rb != null) {
             rb.constraints = RigidbodyConstraints.None;
             rb.AddForce(new Vector3(UnityEngine.Random.Range(-2f, 2f), UnityEngine.Random.Range(-2f, 2f), UnityEngine.Random.Range(-2f, 2f)) * Time.fixedDeltaTime / 0.02f, ForceMode.Impulse);

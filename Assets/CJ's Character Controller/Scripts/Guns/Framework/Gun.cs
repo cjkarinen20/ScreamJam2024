@@ -103,7 +103,7 @@ public class Gun : MonoBehaviour
 
     public void MuzzleFlash(){
         muzzleFlash.SetActive(true);
-        Invoke("ResetMuzzleFlash", .1f);
+        Invoke("ResetMuzzleFlash", Random.Range(0.06f, .1f));
     }
     public void ResetMuzzleFlash () {
         muzzleFlash.SetActive(false);

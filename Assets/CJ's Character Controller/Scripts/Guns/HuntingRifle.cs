@@ -8,10 +8,18 @@ public class HuntingRifle : Gun
     [SerializeField] private Animator anim;
     [SerializeField] private NewFPSController fpsController;
     [SerializeField] private TextMeshProUGUI ammoText;
+    [SerializeField] private AudioSource shootSound, gunSounds;
+    [SerializeField] private AudioClip[] shootSounds;
+    [SerializeField] private AudioClip gunFire, reloadBegin, reloadMidway, reloadEnd;
 
     private void OnEnable() {
+        CancelInvoke();
+        StopAllCoroutines();
+
         ResetMuzzleFlash();
+
         anim.Rebind();
+        
         ammoText.text = currentAmmo.ToString("0") + "/" + gunData.magazineSize;
     }
     public override void Update()
@@ -64,6 +72,13 @@ public class HuntingRifle : Gun
     public override void Shoot(){
         base.Shoot();
 
+        gunSounds.clip = gunFire;
+        gunSounds.Play();
+
+        shootSound.clip = shootSounds[Random.Range(0, shootSounds.Length)];
+        shootSound.pitch = 1 * Random.Range(.85f, 1.15f);
+        shootSound.Play();
+
         anim.Play("RemingtonShoot");
     }
 
@@ -76,11 +91,17 @@ public class HuntingRifle : Gun
     } 
 
     private void ReloadBegin () {
+        gunSounds.clip = reloadBegin;
+        gunSounds.Play();
+
         isReloading = true;
         anim.SetTrigger("ReloadBegin");
         Invoke("ReloadMidway", .9f);
     }
     private void ReloadMidway () {
+        gunSounds.clip = reloadMidway;
+        gunSounds.Play();
+
         if(currentAmmo < gunData.magazineSize){
             anim.SetTrigger("ReloadMidway");
             Invoke("AddBullet", .45f);
@@ -98,6 +119,9 @@ public class HuntingRifle : Gun
         }
     }
     private void ReloadEnd () {
+        gunSounds.clip = reloadEnd;
+        gunSounds.Play();
+
         CancelInvoke("AddBullet");
         CancelInvoke("ReloadMidway");
 
