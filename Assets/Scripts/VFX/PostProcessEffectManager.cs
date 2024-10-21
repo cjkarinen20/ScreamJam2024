@@ -9,13 +9,20 @@ public class PostProcessEffectManager : Singleton<PostProcessEffectManager>
 {
     [SerializeField] private Volume standardPostProcessingVolume;
 
+    [Header("Tunnel Settings")]
+    [SerializeField] private Volume tunnelPostProcessingVolume;
+    [SerializeField] private float tunnelFadeTime = 0.5f;
+
     [Header("Concussion Effect Settings")]
     [SerializeField] private Volume concussionPostProcessingVolume;
     [SerializeField] private float concussionFadeInTime = 0.2f;
     [SerializeField] private float concussionFadeOutTime = 2.5f;
 
     private TransitionState currentTransitionState = TransitionState.None;
+    private VolumeType currentVolume = VolumeType.Standard;
     private float transitionTimer = 0;
+
+    private int currentTunnelVolumeCount = 0;
 
     private enum TransitionState
     {
@@ -24,44 +31,89 @@ public class PostProcessEffectManager : Singleton<PostProcessEffectManager>
         None
     }
 
+    private enum VolumeType
+    {
+        Standard,
+        Tunnel,
+        Concussion
+    }
+
     private void Update()
     {
-
-        if(currentTransitionState == TransitionState.TransitionIn)
+        if (currentVolume == VolumeType.Concussion)
         {
-            transitionTimer += Time.deltaTime;
-
-            float lerpValue = transitionTimer / concussionFadeInTime;
-
-            standardPostProcessingVolume.weight = Mathf.Lerp(1, 0, lerpValue);
-            concussionPostProcessingVolume.weight = 1;
-
-            if(transitionTimer >= concussionFadeInTime)
+            if (currentTransitionState == TransitionState.TransitionIn)
             {
-                transitionTimer = 0;
-                currentTransitionState = TransitionState.TransitionOut;
-                concussionPostProcessingVolume.priority = 1;
-                standardPostProcessingVolume.priority = 0;
+                transitionTimer += Time.deltaTime;
+
+                float lerpValue = transitionTimer / concussionFadeInTime;
+
+                standardPostProcessingVolume.weight = Mathf.Lerp(1, 0, lerpValue);
+                concussionPostProcessingVolume.weight = 1;
+
+                if (transitionTimer >= concussionFadeInTime)
+                {
+                    transitionTimer = 0;
+                    currentTransitionState = TransitionState.TransitionOut;
+                    concussionPostProcessingVolume.priority = 1;
+                    standardPostProcessingVolume.priority = 0;
+                }
+            }
+            else if (currentTransitionState == TransitionState.TransitionOut)
+            {
+                transitionTimer += Time.deltaTime;
+
+                float lerpValue = transitionTimer / concussionFadeOutTime;
+
+                standardPostProcessingVolume.weight = 1;
+                concussionPostProcessingVolume.weight = Mathf.Lerp(1, 0, lerpValue);
+
+                if (transitionTimer >= concussionFadeOutTime)
+                {
+                    transitionTimer = 0;
+                    currentTransitionState = TransitionState.None;
+                    concussionPostProcessingVolume.priority = 0;
+                    standardPostProcessingVolume.priority = 1;
+                    currentVolume = VolumeType.Standard;
+                }
             }
         }
-        else if(currentTransitionState == TransitionState.TransitionOut)
+        else if(currentVolume == VolumeType.Tunnel)
         {
-            transitionTimer += Time.deltaTime;
+            float lerpValue;
 
-            float lerpValue = transitionTimer / concussionFadeOutTime;
+            if (currentTransitionState == TransitionState.TransitionIn)
+            {
+                transitionTimer += Time.deltaTime;
+            }
+            else if (currentTransitionState == TransitionState.TransitionOut)
+            {
+                transitionTimer -= Time.deltaTime;
+            }
 
-            standardPostProcessingVolume.weight = 1;
-            concussionPostProcessingVolume.weight = Mathf.Lerp(1, 0, lerpValue);
+            lerpValue = transitionTimer / tunnelFadeTime;
 
-            if (transitionTimer >= concussionFadeOutTime)
+            standardPostProcessingVolume.weight = Mathf.Lerp(1, 0, lerpValue);
+            tunnelPostProcessingVolume.weight = 1;
+
+            if (transitionTimer >= tunnelFadeTime)
+            {
+                transitionTimer = tunnelFadeTime;
+                tunnelPostProcessingVolume.priority = 1;
+                standardPostProcessingVolume.priority = 0;
+            }
+            else if (transitionTimer <= 0)
             {
                 transitionTimer = 0;
                 currentTransitionState = TransitionState.None;
-                concussionPostProcessingVolume.priority = 0;
+                tunnelPostProcessingVolume.priority = 0;
                 standardPostProcessingVolume.priority = 1;
+                currentVolume = VolumeType.Standard;
             }
         }
     }
+
+
 
     /// <summary>
     /// Call this method to play the concussion vfx.
@@ -71,6 +123,23 @@ public class PostProcessEffectManager : Singleton<PostProcessEffectManager>
         if (currentTransitionState == TransitionState.None)
         {
             currentTransitionState = TransitionState.TransitionIn;
+            currentVolume = VolumeType.Concussion;
+        }
+    }
+
+    public void EnterTunnel()
+    {
+        currentTransitionState = TransitionState.TransitionIn;
+        currentTunnelVolumeCount += 1;
+        currentVolume = VolumeType.Tunnel;
+    }
+
+    public void ExitTunnel()
+    {
+        currentTunnelVolumeCount -= 1;
+        if (currentTunnelVolumeCount <= 0)
+        {
+            currentTransitionState = TransitionState.TransitionOut;
         }
     }
 }
