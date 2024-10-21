@@ -3789,6 +3789,18 @@ PrefabInstance:
       propertyPath: batteryUseMultiplier
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5226480365386544374, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5226480365386544374, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5226480365386544374, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 5306706961971022312, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
       propertyPath: m_Name
       value: Flashlight
@@ -3828,6 +3840,22 @@ PrefabInstance:
     - target: {fileID: 5876941881311113161, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
       propertyPath: m_Shadows.m_NormalBias
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6067793199447988190, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159581131612276988, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159581131612276988, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159581131612276988, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6402962208993458187, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}

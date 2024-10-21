@@ -314,4 +314,4 @@ MonoBehaviour:
   active: 1
   colorDepth:
     m_OverrideState: 1
-    m_Value: 64
+    m_Value: 128

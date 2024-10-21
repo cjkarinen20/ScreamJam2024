@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1155175174702574747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2597198487099822962}
+  m_Layer: 0
+  m_Name: Moss Rock w_ Parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2597198487099822962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155175174702574747}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.6302643, y: 0.2163676, z: 0.31998208, w: 0.6734713}
+  m_LocalPosition: {x: 329.29, y: 34.7, z: 348.23}
+  m_LocalScale: {x: 1.9333, y: 1.9333, z: 1.9333}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5004463031177747410}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: -80.894, y: -45.002, z: 89.726}
+--- !u!1001 &4826123641510034489
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2597198487099822962}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.221393
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.2213945
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.2213926
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.17
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 26.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.639367
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.13223061
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.02848838
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.75691044
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -7.236
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -373.798
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 100.501
+      objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f780b9ab469d184a8ddca889e5a49be, type: 2}
+    - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_Name
+      value: moss rock 14 (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5243888877837086833}
+  m_SourcePrefab: {fileID: 100100000, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+--- !u!1 &3726016003629365681 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+  m_PrefabInstance: {fileID: 4826123641510034489}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &5243888877837086833
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3726016003629365681}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2432090755550338912, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+--- !u!4 &5004463031177747410 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dc6a700d876e11543bb2dc510d42cdb9, type: 3}
+  m_PrefabInstance: {fileID: 4826123641510034489}
+  m_PrefabAsset: {fileID: 0}
