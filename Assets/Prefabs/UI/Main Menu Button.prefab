@@ -135,6 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseOverColor: {r: 0.690566, g: 0.21112846, b: 0, a: 1}
+  mouseOverSFX: {fileID: 8300000, guid: 8ae1adc3e4769f843ae209deb5863f7b, type: 3}
+  onClickSFX: {fileID: 8300000, guid: 8e45222f361b75a46a45eecfb8826c4f, type: 3}
 --- !u!1 &5859940200323103309
 GameObject:
   m_ObjectHideFlags: 0
