@@ -231,7 +231,7 @@ public class NewFPSController : MonoBehaviour
     }
 
     IEnumerator LookAtTarget(Vector3 target){
-        mouseLookEnabled = false;
+        canMove = false;
 
         float time = 2;
         float elapsed = 0;
@@ -256,7 +256,7 @@ public class NewFPSController : MonoBehaviour
             yield return null;
         }
 
-        mouseLookEnabled = true;
+        canMove = true;
     }
     private void HandleMovementInput()
     {
@@ -516,7 +516,7 @@ public class NewFPSController : MonoBehaviour
     private void HandleInteractionCheck()
     {
         if(Input.GetKeyDown(interactKey)){
-            if (Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance))
+            if (Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance, interactionLayer))
             {
                 if(hit.collider.TryGetComponent(out Interactable interactable)){
                     if(interactable != null){

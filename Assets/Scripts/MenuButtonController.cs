@@ -29,13 +29,19 @@ public class MenuButtonController : MonoBehaviour, IPointerEnterHandler, IPointe
 
     private void PlayOnClickSFX()
     {
-        audioManager.PlaySFX(onClickSFX);
+        if(onClickSFX != null){
+            audioManager.PlaySFX(onClickSFX);
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        
         textMesh.color = mouseOverColor;
-        audioManager.PlaySFXRandomPitch(mouseOverSFX);
+        
+        if(mouseOverSFX != null){
+            audioManager.PlaySFXRandomPitch(mouseOverSFX);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
