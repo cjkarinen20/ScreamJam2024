@@ -729,7 +729,7 @@ AudioSource:
   m_GameObject: {fileID: 1255899503681858468}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4056304620874474363, guid: a66b638b62e2abc42a462d830a2b72bb, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1147,7 +1147,7 @@ MonoBehaviour:
   interactionDistance: 5
   interactionLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 257
 --- !u!82 &330455604159971004
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1585,7 +1585,7 @@ AudioSource:
   m_GameObject: {fileID: 2482438015137518054}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4056304620874474363, guid: a66b638b62e2abc42a462d830a2b72bb, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1747,7 +1747,7 @@ AudioSource:
   m_GameObject: {fileID: 2802269067761850316}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4056304620874474363, guid: a66b638b62e2abc42a462d830a2b72bb, type: 2}
   m_audioClip: {fileID: 8300000, guid: e88360b47267a734599174061eccbcec, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.704
@@ -2363,7 +2363,7 @@ AudioSource:
   m_GameObject: {fileID: 5580362712441364840}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4056304620874474363, guid: a66b638b62e2abc42a462d830a2b72bb, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -3768,7 +3768,7 @@ PrefabInstance:
     - target: {fileID: 2592010879591455802, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: 24300002, guid: 69a35df179ef5f2478298e2ffd632444, type: 2}
+      objectReference: {fileID: 4056304620874474363, guid: a66b638b62e2abc42a462d830a2b72bb, type: 2}
     - target: {fileID: 3233181597555319195, guid: 03fa00872e486b94c9156b12ef2e1ba1, type: 3}
       propertyPath: speed
       value: 0.41

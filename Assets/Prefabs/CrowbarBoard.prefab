@@ -4904,7 +4904,7 @@ GameObject:
   - component: {fileID: 8505743411843814910}
   - component: {fileID: 3116702699475812615}
   - component: {fileID: 4407595212970385408}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CrowbarBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5027,12 +5027,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredTool: 0
-  onBreak:
+  onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6005071737181465522}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
+      - m_Target: {fileID: 2409155582194345924}
+        m_TargetAssemblyTypeName: PlayAudio, Assembly-CSharp
+        m_MethodName: PlayRandomAudioClip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5042,12 +5042,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onInteract:
+  onBreak:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2409155582194345924}
-        m_TargetAssemblyTypeName: PlayAudio, Assembly-CSharp
-        m_MethodName: PlayRandomAudioClip
+      - m_Target: {fileID: 6005071737181465522}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
