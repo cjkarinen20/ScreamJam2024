@@ -28,7 +28,7 @@ public class VolumeSettingSlider : MonoBehaviour
     {
         if(tickTimer > 0)
         {
-            tickTimer -= Time.deltaTime;
+            tickTimer -= Time.unscaledDeltaTime;
         }
     }
 
