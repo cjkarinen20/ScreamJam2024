@@ -29,10 +29,12 @@ public class DamageAndRespawnTrigger : MonoBehaviour
     }
 
     private void RepositionPlayer () {
+        newFPSController.enabled = false;
         newFPSController.canMove = true;
         player.transform.position = respawnPosition.transform.position + new Vector3(0, .9f, 0);
         player.transform.position = respawnPosition.transform.position + new Vector3(0, .9f, 0);
         player.transform.position = respawnPosition.transform.position + new Vector3(0, .9f, 0);
         player.transform.position = respawnPosition.transform.position + new Vector3(0, .9f, 0);
+        newFPSController.enabled = true;
     }
 }
