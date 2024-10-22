@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class PauseMenu : MonoBehaviour
     public NewFPSController playerController;
 
     public bool isPaused;
+
+    private AudioSource[] audioSources;
+    private VideoPlayer[] videoSources;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +39,19 @@ public class PauseMenu : MonoBehaviour
     }
      public void PauseGame()
     {
+        audioSources = FindObjectsOfType<AudioSource>();
+        videoSources = FindObjectsOfType<VideoPlayer>();
+        for(int i=0; i<audioSources.Length; i++){
+            if(audioSources[i] != null){
+                audioSources[i].Pause();
+            }
+        }
+        for(int i=0; i<videoSources.Length; i++){
+            if(videoSources[i] != null){
+                videoSources[i].Pause();
+            }
+        }
+
         pauseMenu.SetActive(true);
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
@@ -50,6 +67,27 @@ public class PauseMenu : MonoBehaviour
         playerController.mouseLookEnabled = true;
         Time.timeScale = 1f;
         isPaused = false;
+
+        if(audioSources != null){
+            for(int i=0; i<audioSources.Length; i++){
+            if(audioSources[i] != null){
+                audioSources[i].UnPause();
+            }
+            }
+            for(int i=0; i<audioSources.Length; i++){
+                audioSources[i] = null;
+            }
+        }
+        if(videoSources != null){
+            for(int i=0; i<videoSources.Length; i++){
+            if(videoSources[i] != null){
+                videoSources[i].Play();
+            }
+            }
+            for(int i=0; i<videoSources.Length; i++){
+                videoSources[i] = null;
+            }
+        }
     }
     public void QuitGame()
     {

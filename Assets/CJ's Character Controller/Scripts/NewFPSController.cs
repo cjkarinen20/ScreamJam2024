@@ -226,6 +226,38 @@ public class NewFPSController : MonoBehaviour
 
         staminaSlider.value = currentStamina;
     }
+    public void LookAt(GameObject target){
+        StartCoroutine(LookAtTarget(target.transform.position));
+    }
+
+    IEnumerator LookAtTarget(Vector3 target){
+        mouseLookEnabled = false;
+
+        float time = 2;
+        float elapsed = 0;
+
+        while(elapsed < time){
+            elapsed += Time.deltaTime;
+
+            Vector3 relativePos = target - playerCamera.transform.position;
+            Quaternion rotation = Quaternion.LookRotation(relativePos.normalized, Vector3.up);
+            Quaternion playerRot = rotation;
+            Quaternion cameraRot = rotation;
+            playerRot.x = 0;
+            playerRot.z = 0;
+
+            cameraRot.z = 0;
+            cameraRot.y = 0;
+
+            transform.rotation = Quaternion.Lerp(transform.rotation, playerRot, Time.deltaTime * 5);
+            playerCamera.transform.localRotation = Quaternion.Lerp(playerCamera.transform.localRotation, cameraRot, Time.deltaTime * 5);
+            
+
+            yield return null;
+        }
+
+        mouseLookEnabled = true;
+    }
     private void HandleMovementInput()
     {
         if(isCrouching){
@@ -389,6 +421,7 @@ public class NewFPSController : MonoBehaviour
             }
     }
     private void PlayFootStepSound(){
+        if(!canMove) return;
         footstepAudioSource.pitch = UnityEngine.Random.Range(0.9f, 1.1f);
         if (Physics.Raycast(characterController.transform.position, Vector3.down, out RaycastHit hit, 3))
         {
@@ -419,6 +452,7 @@ public class NewFPSController : MonoBehaviour
         }
     }
     private void PlayScuffSound(){
+        if(!canMove) return;
         footstepAudioSource.pitch = UnityEngine.Random.Range(0.9f, 1.1f);
         if (Physics.Raycast(characterController.transform.position, Vector3.down, out RaycastHit hit, 3))
         {
@@ -596,6 +630,7 @@ public class NewFPSController : MonoBehaviour
     }
 
     private void PlayVoiceSound (TypeOfAudio typeOfAudio) {
+        if(!canMove) return;
         switch (typeOfAudio) {
             case TypeOfAudio.HURT:
                 voiceSounds.clip = hurt[UnityEngine.Random.Range(0, hurt.Length)];
