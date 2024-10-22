@@ -10,7 +10,7 @@ public class flashlight : MonoBehaviour
     public AudioSource AudioSource;
     public AudioClip flashlightClick;
     public AudioClip flashlightFlicker;
-    public GameObject followTarget, volumetricCone;
+    public GameObject followTarget;
     public Light flashLight;
     public KeyCode lightToggle = KeyCode.F;
     private Vector3 vectorOffset;
@@ -84,14 +84,12 @@ public class flashlight : MonoBehaviour
         {
             if (flashLight.enabled)
             {
-                volumetricCone.SetActive(false);
                 AudioSource.PlayOneShot(flashlightClick);
                 flashLight.enabled = false;
                 flashlightVolume.SetActive(false);
             }
             else if (!flashLight.enabled && currentBatteryLevel > 0)
             {
-                volumetricCone.SetActive(true);
                 AudioSource.PlayOneShot(flashlightClick);
                 flashLight.enabled = true;
                 flashlightVolume.SetActive(true);

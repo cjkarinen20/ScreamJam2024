@@ -7,6 +7,7 @@ public class Door : MonoBehaviour, Interactable
     private float dot;
     private bool isOpen = false;
     private bool canInteract = true;
+    [SerializeField] private bool canPlayerOpen = true, autoClose = false;
     public Animator animator;
 
     public AudioSource audioSource;
@@ -15,16 +16,22 @@ public class Door : MonoBehaviour, Interactable
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        animator = transform.parent.GetComponent<Animator>();
+        audioSource = transform.parent.GetComponent<AudioSource>();
     }
     public void OnFocus()
     {
         Debug.Log(dot);
     }
 
-    public void OnInteract()
+    public void ExternalOpen(){
+        OnInteract(false);
+    }
+
+    public void OnInteract(bool calledFromPlayer = true)
     {
+        if(!canPlayerOpen && calledFromPlayer) return;
+        
         Debug.Log("Door Triggered");
         Debug.Log(canInteract);
         if (canInteract)
@@ -60,6 +67,8 @@ public class Door : MonoBehaviour, Interactable
 
     private IEnumerator AutoClose()
     {
+        if(!autoClose) yield break;
+        
         while (isOpen)
         {
             yield return new WaitForSeconds(3);

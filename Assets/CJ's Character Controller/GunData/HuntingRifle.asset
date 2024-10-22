@@ -16,7 +16,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 17
   shootingRange: 100
-  fireRate: 1
+  fireRate: 0.68325
   magazineSize: 5
   reloadTime: 2
   recoilAmount: 15
