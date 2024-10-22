@@ -4900,6 +4900,7 @@ GameObject:
   - component: {fileID: 7880125889278272981}
   - component: {fileID: 5683883071777387445}
   - component: {fileID: 4424901993240221278}
+  - component: {fileID: 2409155582194345924}
   - component: {fileID: 8505743411843814910}
   - component: {fileID: 3116702699475812615}
   - component: {fileID: 4407595212970385408}
@@ -4997,6 +4998,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2409155582194345924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3830395005044352863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0095ec5007c55c94b8e47d902fd9247d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 37249bfa004c0944e968e8b02e323204, type: 3}
+  - {fileID: 8300000, guid: 1ebcf3594a1550342994cf7c9202feff, type: 3}
+  - {fileID: 8300000, guid: 0b69278b0c29c1b45969e24c95a996df, type: 3}
 --- !u!114 &8505743411843814910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5013,18 +5030,6 @@ MonoBehaviour:
   onBreak:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4407595212970385408}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 6005071737181465522}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Play
@@ -5037,6 +5042,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2409155582194345924}
+        m_TargetAssemblyTypeName: PlayAudio, Assembly-CSharp
+        m_MethodName: PlayRandomAudioClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  destroyCollider: 0
 --- !u!54 &3116702699475812615
 Rigidbody:
   m_ObjectHideFlags: 0

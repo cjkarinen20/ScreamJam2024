@@ -6,7 +6,7 @@ using static iBreakable;
 public class Breakable : MonoBehaviour, iBreakable
 {
     public RequiredTool requiredTool;
-    [SerializeField] private UnityEvent onBreak;
+    [SerializeField] private UnityEvent onInteract, onBreak;
     private Rigidbody rb;
     public bool hasBeenBroken {private set; get;}
     public bool destroyCollider = false;
@@ -22,11 +22,13 @@ public class Breakable : MonoBehaviour, iBreakable
     {
         if(hasBeenBroken) return;
 
+        onInteract?.Invoke();
+
         hasBeenBroken = true;
         
         float delay = 0;
         if(requiredTool == RequiredTool.Crowbar) delay = .7f;
-        if(requiredTool == RequiredTool.Boltcutters) delay = 1.15f;
+        if(requiredTool == RequiredTool.Boltcutters) delay = 1.15f / 1.6f;
 
         Invoke("FullBreak", delay);
     }
