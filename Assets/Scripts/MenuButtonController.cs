@@ -8,10 +8,13 @@ using TMPro;
 public class MenuButtonController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private Color mouseOverColor;
+    [SerializeField] private AudioClip mouseOverSFX;
+    [SerializeField] private AudioClip onClickSFX;
     private Color defaultColor;
 
     private Button button;
     private TextMeshProUGUI textMesh;
+    private AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +22,20 @@ public class MenuButtonController : MonoBehaviour, IPointerEnterHandler, IPointe
         button = GetComponent<Button>();
         textMesh = GetComponentInChildren<TextMeshProUGUI>();
         defaultColor = textMesh.color;
+        audioManager = AudioManager.Instance;
+
+        button.onClick.AddListener(PlayOnClickSFX);
+    }
+
+    private void PlayOnClickSFX()
+    {
+        audioManager.PlaySFX(onClickSFX);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         textMesh.color = mouseOverColor;
+        audioManager.PlaySFXRandomPitch(mouseOverSFX);
     }
 
     public void OnPointerExit(PointerEventData eventData)
