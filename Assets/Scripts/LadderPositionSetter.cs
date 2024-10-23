@@ -9,6 +9,7 @@ public class LadderPositionSetter : MonoBehaviour
 
     [SerializeField] private Animator fadeAnim;
     private bool wasActive;
+
     public void SetTargetPosition()
     {
         StartCoroutine("Move");

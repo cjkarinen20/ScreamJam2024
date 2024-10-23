@@ -67,7 +67,7 @@ public class Monster : MonoBehaviour
         _light.SetActive(false);
         preventGoingToMiddleObstacle.SetActive(true);
         agent.destination = randomPosition[Random.Range(0, randomPosition.Length)].transform.position;
-        Invoke("Attack", Random.Range(health + 2f, health + 3f));
+        Invoke("Attack", Random.Range(health + 3f, health + 4f));
 
         monsterSounds.clip = chaseSounds[Random.Range(0, chaseSounds.Length)];
         monsterSounds.Play();
@@ -76,7 +76,7 @@ public class Monster : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(other.transform.gameObject.tag != "Player" && isSpawned && !isEndingFight) return;
         ResetSequence();
-        NewFPSController.OnTakeDamage(50);
+        NewFPSController.OnTakeDamage(35);
     }
 
     private void Update() {
@@ -138,7 +138,7 @@ public class Monster : MonoBehaviour
         preventGoingToMiddleObstacle.SetActive(true);
         transform.position = randomPosition[Random.Range(0, randomPosition.Length)].transform.position;
         agent.destination = randomPosition[Random.Range(0, randomPosition.Length)].transform.position;
-        Invoke("Attack", Random.Range((health / 1.5f) + 2f, (health / 1.5f) + 3f));
+        Invoke("Attack", Random.Range((health / 1.5f) + 3f, (health / 1.5f) + 4f));
     }
 
     private void Attack () {
