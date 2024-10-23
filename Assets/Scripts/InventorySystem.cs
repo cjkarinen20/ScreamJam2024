@@ -12,6 +12,7 @@ public class InventorySystem : MonoBehaviour
     public bool hasBoltCutters {private set; get;}
     public bool hasKey {private set; get;}
     public bool hasLadder {private set; get;}
+    public bool hasRifle {private set; get;}
 
 
     private void Awake() {
@@ -23,6 +24,7 @@ public class InventorySystem : MonoBehaviour
         hasBoltCutters = false;
         hasKey = false;
         hasLadder = false;
+        hasRifle = false;
         
         for(int i = 0; i < guns.Length; i++) {
             SetGunState(i, false);
@@ -39,7 +41,7 @@ public class InventorySystem : MonoBehaviour
     }
 
     private void Update() {
-        if(Input.GetKeyDown("1")){
+        if(Input.GetKeyDown("1") && hasRifle){
             SetGunState(0, true);
         }
     }
@@ -62,6 +64,9 @@ public class InventorySystem : MonoBehaviour
 
     public void GiveLadder () {
         hasLadder = true;
+        hasRifle = true;
+
+        SetGunState(0, true);
     }
 
     public void UseCrowbar () {

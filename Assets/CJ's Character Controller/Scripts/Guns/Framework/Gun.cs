@@ -98,6 +98,9 @@ public class Gun : MonoBehaviour
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, gunData.shootingRange, gunData.targetLayerMask))
         {
             Debug.Log(gunData.name + ": hit " + hit.collider.name);
+            if(hit.transform.gameObject.TryGetComponent<Monster>(out Monster monster)){
+                monster.Hit();
+            }
         }
     }
 
