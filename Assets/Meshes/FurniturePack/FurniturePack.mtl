@@ -1,0 +1,41 @@
+# Blender MTL File: 'Furniture1.blend'
+# Material Count: 3
+
+newmtl Furniture1
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump Textures1\\Furniture_normal.png
+map_Kd Textures1\\Furniture_albedoAO.jpg
+map_Ns Textures1\\Furniture_roughness.jpg
+refl Textures1\\Furniture_metallic.jpg
+
+newmtl Furniture2
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures2\\Multiplicar.jpg
+
+newmtl Furniture3
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump Textures3\\None_normal.png
+map_Kd Textures3\\None_albedo.jpg
+map_Ns Textures3\\None_roughness.jpg
+refl Textures3\\None_metallic.jpg
