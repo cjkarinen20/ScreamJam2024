@@ -57,8 +57,18 @@ public class Breakable : MonoBehaviour, iBreakable
 
     public void OnInteract()
     {
-        Debug.Log("BREAK");
-        Break();
+        if(InventorySystem.instance.hasCrowbar && requiredTool == RequiredTool.Crowbar){
+            Break();
+        }
+        if(InventorySystem.instance.hasBoltCutters && requiredTool == RequiredTool.Boltcutters){
+            Break();
+        }
+        if(InventorySystem.instance.hasKey && requiredTool == RequiredTool.Key){
+            Break();
+        }
+        if(InventorySystem.instance.hasLadder && requiredTool == RequiredTool.Ladder){
+            Break();
+        }
     }
 
     public void OnLoseFocus()

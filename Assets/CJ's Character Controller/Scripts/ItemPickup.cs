@@ -14,6 +14,7 @@ public class ItemPickup : MonoBehaviour, Interactable
         if(itemType == ItemType.CROWBAR) InventorySystem.instance.GiveCrowbar();
         if(itemType == ItemType.BOLTCUTTER) InventorySystem.instance.GiveBoltCutters();
         if(itemType == ItemType.KEY) InventorySystem.instance.GiveKey();
+        if(itemType == ItemType.LADDER) InventorySystem.instance.GiveLadder();
 
         onPickup?.Invoke();
 

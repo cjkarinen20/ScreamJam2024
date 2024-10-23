@@ -526,19 +526,21 @@ public class NewFPSController : MonoBehaviour
                 if(hit.collider.TryGetComponent(out iBreakable breakable)){
                     if(breakable != null){
                         if(breakable.transform.TryGetComponent<Breakable>(out Breakable childBreakable) && !childBreakable.hasBeenBroken && childBreakable.requiredTool == iBreakable.RequiredTool.Crowbar){
-                            if(childBreakable.requiredTool == iBreakable.RequiredTool.Crowbar && !inventory.hasCrowbar) return;
+                            if(childBreakable.requiredTool == iBreakable.RequiredTool.Crowbar && !inventory.hasCrowbar){
+                                return;
+                            } 
 
                             inventory.UseCrowbar();
                             PlayVoiceSound(TypeOfAudio.TOOLUSE);
                         }
                         if(breakable.transform.TryGetComponent<Breakable>(out childBreakable) && !childBreakable.hasBeenBroken && childBreakable.requiredTool == iBreakable.RequiredTool.Boltcutters){
-                            if(childBreakable.requiredTool == iBreakable.RequiredTool.Boltcutters && !inventory.hasBoltCutters) return;
+                            if(childBreakable.requiredTool == iBreakable.RequiredTool.Boltcutters && !inventory.hasBoltCutters){
+                                return;
+                            }
 
                             inventory.UseBoltCutter();
                             PlayVoiceSound(TypeOfAudio.TOOLUSE);
                         }
-
-                        if(breakable.transform.TryGetComponent<Breakable>(out childBreakable) && !childBreakable.hasBeenBroken && childBreakable.requiredTool == iBreakable.RequiredTool.Key && !inventory.hasKey) return;
 
                         breakable.OnInteract();
                     }
