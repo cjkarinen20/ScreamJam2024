@@ -28306,6 +28306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9a6a387aeab8a47adad5127f07b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetActiveState: 0
+  blocker: {fileID: 574488109}
 --- !u!65 &574488111
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57818,7 +57820,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1251043561
 RectTransform:
   m_ObjectHideFlags: 0
@@ -79565,51 +79567,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2764754921596272858, guid: 944bad5a6dad0f04c8280021ea599b73, type: 3}
   m_PrefabInstance: {fileID: 1503884248}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1505480268
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1505480269}
-  - component: {fileID: 1505480270}
-  m_Layer: 0
-  m_Name: SceneManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1505480269
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1505480268}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1612721265}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1505480270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1505480268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb4d87b5ede45d34cbb6380fb6403659, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneOnly: 0
 --- !u!1001 &1507634660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84092,7 +84049,6 @@ Transform:
   - {fileID: 1605738549}
   - {fileID: 1251043561}
   - {fileID: 404582406}
-  - {fileID: 1505480269}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1613662046
@@ -98333,6 +98289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9a6a387aeab8a47adad5127f07b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetActiveState: 0
+  blocker: {fileID: 1001476650}
 --- !u!65 &1876290006
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -107300,6 +107258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9a6a387aeab8a47adad5127f07b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetActiveState: 1
+  blocker: {fileID: 1001476650}
 --- !u!65 &2108115381
 BoxCollider:
   m_ObjectHideFlags: 0
