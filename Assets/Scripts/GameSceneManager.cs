@@ -15,4 +15,9 @@ public class GameSceneManager : Singleton<GameSceneManager>
     {
         Application.Quit();
     }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }

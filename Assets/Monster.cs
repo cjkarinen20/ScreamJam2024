@@ -53,6 +53,8 @@ public class Monster : MonoBehaviour
     }
 
     private void Spawn () {
+        ActivateBossMusic();
+
         isSpawned = true;
 
         agent.speed = 20;
