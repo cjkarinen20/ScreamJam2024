@@ -163,6 +163,8 @@ public class NewFPSController : MonoBehaviour
 
     public static NewFPSController instance;
 
+    private Color bloodOverlayDefaultColor;
+
     private void OnEnable()
     {
         canMove = true;
@@ -192,6 +194,7 @@ public class NewFPSController : MonoBehaviour
         currentStamina = maxStamina;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        bloodOverlayDefaultColor = bloodOverlay.color;
     }
 
     void Update()
@@ -502,7 +505,7 @@ public class NewFPSController : MonoBehaviour
     private void DamageOverlay()
     {
         float transparency = 1f - (currentHealth / 100f);
-        Color imageColor = Color.white;
+        Color imageColor = bloodOverlayDefaultColor;
         imageColor.a = transparency;
         bloodOverlay.color = imageColor;
     }
@@ -514,10 +517,10 @@ public class NewFPSController : MonoBehaviour
 
         if (currentHealth <= 0)
             KillPlayer();
-        else if (regeneratingHealth != null)
-            StopCoroutine(regeneratingHealth);
+        //else if (regeneratingHealth != null)
+            //StopCoroutine(regeneratingHealth);
 
-        regeneratingHealth = StartCoroutine(RegenerateHealth());
+        //regeneratingHealth = StartCoroutine(RegenerateHealth());
     }
     public void KillPlayer()
     {
@@ -525,7 +528,7 @@ public class NewFPSController : MonoBehaviour
         currentHealth = 0;
 
         if (regeneratingHealth != null)
-            StopCoroutine(regeneratingHealth);
+            //StopCoroutine(regeneratingHealth);
 
         Debug.Log("DEAD");
 
