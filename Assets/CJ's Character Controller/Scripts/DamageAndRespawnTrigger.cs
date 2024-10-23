@@ -22,19 +22,24 @@ public class DamageAndRespawnTrigger : MonoBehaviour
             fadeAnim.Rebind();
             fadeAnim.Play("FadeUI");
 
-            Invoke("RepositionPlayer", .25f);
+            StartCoroutine(RepositionPlayer());
+
+            //Invoke("RepositionPlayer", .25f);
 
             newFPSController.canMove = false;
         }
     }
 
-    private void RepositionPlayer () {
+    private IEnumerator RepositionPlayer () {
         newFPSController.enabled = false;
         newFPSController.canMove = true;
+        yield return new WaitForSeconds(0.25f);
         player.transform.position = respawnPosition.transform.position + new Vector3(0, .9f, 0);
         player.transform.position = respawnPosition.transform.position + new Vector3(0, .9f, 0);
         player.transform.position = respawnPosition.transform.position + new Vector3(0, .9f, 0);
         player.transform.position = respawnPosition.transform.position + new Vector3(0, .9f, 0);
+        yield return null;
         newFPSController.enabled = true;
+        yield return null;
     }
 }

@@ -84,32 +84,39 @@ public class PostProcessEffectManager : Singleton<PostProcessEffectManager>
 
             if (currentTransitionState == TransitionState.TransitionIn)
             {
-                transitionTimer += Time.deltaTime;
+                if (transitionTimer >= tunnelFadeTime)
+                {
+                    transitionTimer = tunnelFadeTime;
+                }
+                else
+                {
+                    transitionTimer += Time.deltaTime;
+                    tunnelPostProcessingVolume.priority = 1;
+                    standardPostProcessingVolume.priority = 0;
+                }
             }
             else if (currentTransitionState == TransitionState.TransitionOut)
             {
-                transitionTimer -= Time.deltaTime;
+
+                if (transitionTimer <= 0)
+                {
+                    transitionTimer = 0;
+                    currentTransitionState = TransitionState.None;
+
+                    currentVolume = VolumeType.Standard;
+                }
+                else
+                {
+                    transitionTimer -= Time.deltaTime;
+                    tunnelPostProcessingVolume.priority = 0;
+                    standardPostProcessingVolume.priority = 1;
+                }
             }
 
             lerpValue = transitionTimer / tunnelFadeTime;
 
             standardPostProcessingVolume.weight = Mathf.Lerp(1, 0, lerpValue);
-            tunnelPostProcessingVolume.weight = 1;
-
-            if (transitionTimer >= tunnelFadeTime)
-            {
-                transitionTimer = tunnelFadeTime;
-                tunnelPostProcessingVolume.priority = 1;
-                standardPostProcessingVolume.priority = 0;
-            }
-            else if (transitionTimer <= 0)
-            {
-                transitionTimer = 0;
-                currentTransitionState = TransitionState.None;
-                tunnelPostProcessingVolume.priority = 0;
-                standardPostProcessingVolume.priority = 1;
-                currentVolume = VolumeType.Standard;
-            }
+            tunnelPostProcessingVolume.weight = Mathf.Lerp(0, 1, lerpValue);
         }
     }
 
