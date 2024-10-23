@@ -9,7 +9,7 @@ public class Breakable : MonoBehaviour, iBreakable
     [SerializeField] private UnityEvent onInteract, onBreak;
     private Rigidbody rb;
     public bool hasBeenBroken {private set; get;}
-    public bool destroyCollider = false;
+    public bool destroyCollider = false, destroyScript = true;
 
     private void Awake() {
         hasBeenBroken = false;
@@ -47,7 +47,10 @@ public class Breakable : MonoBehaviour, iBreakable
         }
 
         onBreak?.Invoke();
-        Destroy(this);
+
+        if(destroyScript){
+            Destroy(this);
+        }
     }
 
     public void OnFocus()

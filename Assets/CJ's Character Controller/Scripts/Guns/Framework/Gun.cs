@@ -6,7 +6,7 @@ public class Gun : MonoBehaviour
 {
     public GunData gunData;
     public GameObject muzzleFlash;
-    private NewFPSController playerController;
+    public NewFPSController playerController;
     private Transform cameraTransform;
 
     [HideInInspector]
@@ -33,6 +33,8 @@ public class Gun : MonoBehaviour
 
     public virtual void Update()
     {
+        if(!playerController.canMove) return;
+
         if (Input.GetButtonDown("Fire1"))
         {
             TryShoot();
