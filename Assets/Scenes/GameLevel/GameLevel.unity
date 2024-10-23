@@ -109565,6 +109565,14 @@ PrefabInstance:
       propertyPath: events.Array.data[0]._event.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1040696164}
+    - target: {fileID: 7220292988375810744, guid: 97cdc5ed1bcdbd84899160538aaa551a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -47.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220292988375810744, guid: 97cdc5ed1bcdbd84899160538aaa551a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -206.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7222934221863258367, guid: 97cdc5ed1bcdbd84899160538aaa551a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.111
