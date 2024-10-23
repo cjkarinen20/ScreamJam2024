@@ -790,7 +790,13 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -810,11 +816,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 2925adad-9389-4040-8aca-62f997b61ec8
+  cloudProjectId: a5cbd49a-d030-4041-ab1d-c4de21426efb
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: ScreamJam2024 2024-10-16_17-14-57
-  organizationId: 5449906-144e-48fa-a3bd-dae4701d725c
+  projectName: Voice Of The Valley
+  organizationId: austenkinney
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
