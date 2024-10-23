@@ -6,13 +6,17 @@ using UnityEngine;
 public class HuntingRifle : Gun
 {
     [SerializeField] private Animator anim;
-    [SerializeField] private NewFPSController fpsController;
     [SerializeField] private TextMeshProUGUI ammoText;
     [SerializeField] private AudioSource shootSound, gunSounds;
     [SerializeField] private AudioClip[] shootSounds;
     [SerializeField] private AudioClip gunFire, reloadBegin, reloadMidway, reloadEnd;
+    private bool hasReloadEnded = false;
 
     private void OnEnable() {
+        hasReloadEnded = false;
+
+        currentAmmo = gunData.magazineSize;
+
         CancelInvoke();
         StopAllCoroutines();
 
@@ -28,7 +32,7 @@ public class HuntingRifle : Gun
 
         ammoText.text = currentAmmo.ToString("0") + "/" + gunData.magazineSize;
 
-        switch (fpsController.playerMovementState) {
+        switch (playerController.playerMovementState) {
             case NewFPSController.PlayerMovementState.IDLE:
                 anim.ResetTrigger("Walk");
                 anim.ResetTrigger("Run");
@@ -52,6 +56,8 @@ public class HuntingRifle : Gun
 
     public override void TryShoot()
     {
+        if(!playerController.canMove) return;
+
         if (isReloading){
             Debug.Log(gunData.name + ": is reloading...");
             ReloadEnd();
@@ -119,6 +125,9 @@ public class HuntingRifle : Gun
         }
     }
     private void ReloadEnd () {
+        if(hasReloadEnded) return;
+
+        hasReloadEnded = true;
         gunSounds.clip = reloadEnd;
         gunSounds.Play();
 
@@ -134,6 +143,7 @@ public class HuntingRifle : Gun
     }
 
     private void StopReload () {
+        hasReloadEnded = false;
         isReloading = false;
     }
 }

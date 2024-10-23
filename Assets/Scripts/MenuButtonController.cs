@@ -29,7 +29,7 @@ public class MenuButtonController : MonoBehaviour, IPointerEnterHandler, IPointe
 
     private void PlayOnClickSFX()
     {
-        if(onClickSFX != null){
+        if(onClickSFX != null && audioManager != null){
             audioManager.PlaySFX(onClickSFX);
         }
     }
@@ -39,7 +39,7 @@ public class MenuButtonController : MonoBehaviour, IPointerEnterHandler, IPointe
         
         textMesh.color = mouseOverColor;
         
-        if(mouseOverSFX != null){
+        if(mouseOverSFX != null && audioManager != null){
             audioManager.PlaySFXRandomPitch(mouseOverSFX);
         }
     }

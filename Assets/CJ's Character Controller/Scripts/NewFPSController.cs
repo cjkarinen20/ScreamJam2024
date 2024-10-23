@@ -9,9 +9,10 @@ using Unity.VisualScripting;
 
 public class NewFPSController : MonoBehaviour
 {   
+    [SerializeField] private GameObject gameOverScreen;
     public enum PlayerMovementState {IDLE, WALKING, RUNNING}
     public PlayerMovementState playerMovementState {private set; get;}
-    [SerializeField] private Slider staminaSlider;
+    [SerializeField] private Slider staminaSlider, healthSlider;
     [SerializeField] private InventorySystem inventory;
     [SerializeField] private AudioSource voiceSounds;
     [SerializeField] private AudioClip[] hurt, jump, outOfStam, toolUse;
@@ -64,7 +65,7 @@ public class NewFPSController : MonoBehaviour
     [SerializeField] private float regenCooldown = 10;
     [SerializeField] private float healthIncreaseIncrement = 1;
     [SerializeField] private float healthTimeIncrement = 0.1f;
-    private float currentHealth;
+    public float currentHealth;
     private Coroutine regeneratingHealth;
     public static Action<float> OnTakeDamage;
     public static Action<float> OnDamage;
@@ -79,7 +80,7 @@ public class NewFPSController : MonoBehaviour
     [SerializeField] private float timeBeforeStaminaRegenStarts = 5;
     [SerializeField] private float staminaIncreaseIncrement = 2;
     [SerializeField] private float staminaTimeIncrement = 0.1f;
-    private float currentStamina;
+    public float currentStamina;
     private Coroutine regeneratingStamina;
     public static Action<float> OnStaminaChange;
 
@@ -164,7 +165,14 @@ public class NewFPSController : MonoBehaviour
 
     private void OnEnable()
     {
+        canMove = true;
+
+        gameOverScreen.SetActive(false);
         OnTakeDamage += ApplyDamage;
+        canMove = true;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     private void OnDisable()
     {
@@ -173,6 +181,9 @@ public class NewFPSController : MonoBehaviour
 
     void Awake()
     {
+        origWalkSpeed = walkSpeed;
+        origSprintSpeed = sprintSpeed;
+        origCrouchSpeed = crouchSpeed;
         instance = this;
         playerCamera = GetComponentInChildren<Camera>();
         characterController = GetComponentInChildren<CharacterController>();
@@ -196,6 +207,10 @@ public class NewFPSController : MonoBehaviour
         //Specifies when to update movement
         if (canMove) 
         {
+            if(walkSpeed < origWalkSpeed) walkSpeed += .1f * Time.deltaTime;
+            if(sprintSpeed < origSprintSpeed) sprintSpeed += .1f * Time.deltaTime;
+            if(crouchSpeed < origCrouchSpeed) crouchSpeed += .1f * Time.deltaTime;
+
             HandleMovementInput();
             
             if(crouchEnabled){
@@ -225,6 +240,13 @@ public class NewFPSController : MonoBehaviour
         }
 
         staminaSlider.value = currentStamina;
+        healthSlider.value = currentHealth;
+    }
+    private float origWalkSpeed, origSprintSpeed, origCrouchSpeed;
+    public void SlowPlayer(){
+        walkSpeed /= 3;
+        sprintSpeed /= 3;
+        crouchSpeed /= 3;
     }
     public void LookAt(GameObject target){
         StartCoroutine(LookAtTarget(target.transform.position));
@@ -255,8 +277,6 @@ public class NewFPSController : MonoBehaviour
 
             yield return null;
         }
-
-        canMove = true;
     }
     private void HandleMovementInput()
     {
@@ -501,6 +521,7 @@ public class NewFPSController : MonoBehaviour
     }
     public void KillPlayer()
     {
+        canMove = false;
         currentHealth = 0;
 
         if (regeneratingHealth != null)
@@ -508,11 +529,23 @@ public class NewFPSController : MonoBehaviour
 
         Debug.Log("DEAD");
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameOverScreen.SetActive(true);
 
         //Add further implementation later
         //Make a "fade to black" animation play here and restart the scene
     }
+
+    //IEnumerator Respawn(){
+    //    gameObject.SetActive(false);
+    //    currentHealth = 100;
+    //    currentStamina = 100;
+    //    transform.position = respawnPosition.transform.position;
+    //    monsterObject.SetActive(false);
+//
+    //    yield return null;
+    //    monsterObject.SetActive(true);
+    //    gameObject.SetActive(true);
+    //}
     private void HandleInteractionCheck()
     {
         if(Input.GetKeyDown(interactKey)){

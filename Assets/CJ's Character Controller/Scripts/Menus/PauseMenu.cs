@@ -25,7 +25,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && playerController.canMove)
         {
            if (isPaused)
             {
@@ -39,6 +39,7 @@ public class PauseMenu : MonoBehaviour
     }
      public void PauseGame()
     {
+        playerController.canMove = false;
         audioSources = FindObjectsOfType<AudioSource>();
         videoSources = FindObjectsOfType<VideoPlayer>();
         for(int i=0; i<audioSources.Length; i++){
@@ -61,6 +62,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void ResumeGame()
     {
+        playerController.canMove = true;
         EventSystem.current.SetSelectedGameObject(null);
         pauseMenu.SetActive(false);
         Cursor.visible = false;
