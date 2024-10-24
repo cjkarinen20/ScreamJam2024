@@ -58849,8 +58849,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Gameplay Programming \r\n\r\nAydin (TDG Games)\r\nAusten Kinney\r\nCJ
     Karinen\r\n\r\n\r\n\r\n\r\nNarrative\r\n\r\nCJ Karinen\nAydin (TDG Games)\r\r\n\r\n\r\n\r\n\r\nGraphics
-    Programming\r\n\r\nAusten Kinney\r\n\r\n\r\n\r\n\r\n3d Art \r\n\r\nKatsvmi\r
-    (Gmail: kamila.lukasiak010)\nXolomojo\r\n\r\n\r\n\r\n\r\nAdditional Art\r\n\r\nsketchfab\r\n\r\n\r\n\r\n\r\nLevel
+    Programming\r\n\r\nAusten Kinney\r\n\r\n\r\n\r\n\r\n3d Art \r\n\r\nKatsvmi (Gmail:
+    kamila.lukasiak010)\nXolomojo\r\n\r\n\r\n\r\n\r\nAdditional Art\r\n\r\nsketchfab\r\n\r\n\r\n\r\n\r\nLevel
     Design\r\n \r\nLuke Pierson\r\n\r\n\r\n\r\n\r\nMusic Composition & Production\r\n\r\nKimbo1337\r\n\r\n\r\n\r\n\r\nSound
     Design\r\n\r\nMatt Collings\r\n\r\n\r\n\r\n\r\nVoice Acting\r\n\r\nBreann as
     Agent Knox (Gmail: breannxaviera)\r\nCJ Karinen as Agent Sherwood\r\n\r\n\r\n\r\n\r\nMade
@@ -58898,7 +58898,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
