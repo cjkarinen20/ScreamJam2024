@@ -1063,6 +1063,7 @@ MonoBehaviour:
   regenCooldown: 5
   healthIncreaseIncrement: 0.33
   healthTimeIncrement: 0.1
+  currentHealth: 0
   bloodOverlay: {fileID: 4100961529026981439}
   maxStamina: 100
   staminaUseMultiplier: 5
@@ -1071,8 +1072,9 @@ MonoBehaviour:
   timeBeforeStaminaRegenStarts: 5
   staminaIncreaseIncrement: 2
   staminaTimeIncrement: 0.1
+  currentStamina: 0
   jumpForce: 7.5
-  gravity: 30
+  gravity: 5
   crouchHeight: 0.5
   standingHeight: 1.7
   timeToCrouch: 0.18

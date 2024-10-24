@@ -420,6 +420,8 @@ public class NewFPSController : MonoBehaviour
     {
         if (!characterController.isGrounded)
             moveDirection.y -= gravity * Time.deltaTime;
+        else
+            moveDirection.y = gravity * Time.deltaTime;
 
         if (slopeSlidingEnabled && isSliding)
             moveDirection += new Vector3(hitPointNormal.x, -hitPointNormal.z) * slopeSpeed;

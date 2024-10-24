@@ -7,8 +7,12 @@ public class InvisibleWallTriggerVolume : MonoBehaviour
     [SerializeField] private bool targetActiveState;
     [SerializeField] private GameObject blocker;
 
+
     private void OnTriggerEnter(Collider other)
     {
-        blocker.SetActive(targetActiveState);
+        if (other.CompareTag("Player") == true)
+        {
+            blocker.SetActive(targetActiveState);
+        }
     }
 }

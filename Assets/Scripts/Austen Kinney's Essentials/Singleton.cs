@@ -56,7 +56,7 @@ namespace AustenKinney.Essentials
 
         public virtual void OnDestroy()
         {
-            //isBeingDestroyed = true;
+            isBeingDestroyed = true;
 
             if (!gameObject.scene.isLoaded) return;
 

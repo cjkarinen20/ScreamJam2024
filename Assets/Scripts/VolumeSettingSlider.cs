@@ -24,6 +24,7 @@ public class VolumeSettingSlider : MonoBehaviour
         slider.onValueChanged.AddListener(SetVolume);
     }
 
+
     private void Update()
     {
         if(tickTimer > 0)

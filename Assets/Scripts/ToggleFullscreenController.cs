@@ -22,6 +22,7 @@ public class ToggleFullscreenController : MonoBehaviour
     {
         Screen.fullScreen = toggle;
 
+
         audioManager.PlaySFX(toggleSFX);
     }
 }
