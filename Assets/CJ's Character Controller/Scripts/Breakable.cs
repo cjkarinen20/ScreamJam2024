@@ -39,6 +39,10 @@ public class Breakable : MonoBehaviour, iBreakable
             collider.layerOverridePriority = 10000;
             collider.excludeLayers |= (1 << LayerMask.NameToLayer("Player"));
             collider.size /= 2;
+            if(requiredTool == RequiredTool.Crowbar)
+            {
+                collider.gameObject.layer = LayerMask.NameToLayer("Ignore Player");
+            }
         }
         
         if(rb != null) {
