@@ -12,7 +12,6 @@ public class NewFPSController : MonoBehaviour
     [SerializeField] private GameObject gameOverScreen;
     public enum PlayerMovementState {IDLE, WALKING, RUNNING}
     public PlayerMovementState playerMovementState {private set; get;}
-    [SerializeField] private Slider staminaSlider, healthSlider;
     [SerializeField] private InventorySystem inventory;
     [SerializeField] private AudioSource voiceSounds;
     [SerializeField] private AudioClip[] hurt, jump, outOfStam, toolUse;
@@ -242,8 +241,6 @@ public class NewFPSController : MonoBehaviour
             ApplyFinalMovement();
         }
 
-        staminaSlider.value = currentStamina;
-        healthSlider.value = currentHealth;
     }
     private float origWalkSpeed, origSprintSpeed, origCrouchSpeed;
     public void SlowPlayer(){
