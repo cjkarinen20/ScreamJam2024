@@ -83,6 +83,10 @@ public class Monster : MonoBehaviour
         if(bossMusicActive && bossMusic.volume < 1){
             bossMusic.volume += Time.deltaTime / 3f;
         }
+        else if(bossMusicActive == false && bossMusic.volume > 0)
+        {
+            bossMusic.volume -= Time.deltaTime / 2f;
+        }
 
         if(isEndingFight && agent.velocity.magnitude <= .6f && despawnChecking){
             Destroy(this.gameObject);
@@ -116,6 +120,7 @@ public class Monster : MonoBehaviour
                 Invoke("BeginDespawnChecks", 1.5f);
                 agent.speed = 20;
                 agent.destination = ladderArea.transform.position;
+                bossMusicActive = false;
                 return;
             }
 
@@ -150,5 +155,15 @@ public class Monster : MonoBehaviour
         _light.SetActive(true);
         preventGoingToMiddleObstacle.SetActive(false);
         agent.destination = player.transform.position;
+    }
+
+    private void OnDisable()
+    {
+        bossMusic.Stop();
+    }
+
+    private void OnDestroy()
+    {
+        bossMusic.Stop();
     }
 }
